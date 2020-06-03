@@ -1,0 +1,6 @@
+'''
+DESAFIO 020
+
+O mesmo professor do desafio anterior quer SORTEAR A ORDEM DE APRESENTAÇÃO DOS TRABALHOS DOS ALUNOS.
+Faça um programa que LEIA O NOME DOS QUATRO ALUNOS E MOSTRE A ORDEM SORTEADA.
+'''
