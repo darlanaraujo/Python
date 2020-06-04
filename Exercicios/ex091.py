@@ -64,15 +64,5 @@ for c in range(1):
 # ================ ANÁLISE DO CÓDIGO ====================================================================
 
 # ================ MODELO CURSO EM VIDEO ================================================================
-'''from random import randint
-#nomes = {'j1': 0, 'j2': 0}
-nomes = {}
 
-for c in range(1, 5):
-    nome = str(input('Nome: '))
-    dados = str(input('Aperte (ENTER) para jogar os dados...'))
-    nomes[nome] = randint(1, 6)
-    print(f'{nome} tirou {nomes[nome]}')
-
-print(nomes)'''
 
