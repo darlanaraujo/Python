@@ -1,0 +1,6 @@
+print('''| DIGITE UMA BASE DE DADOS PARA
+| FAZER A CONVERSÃO DO NÚMERO ESCOLHIDO.
+|
+| [ 1 ] TEXTO 1:
+| [ 2 ] TEXTO 2:
+| [ 3 ] TEXTO 3:''')
