@@ -121,6 +121,15 @@ print()
 # ========================= LENDO DADOS PARA UM DICIONÁRIO/LISTA ======================================================
 linhas(' LENDO DADOS PARA UM DICIONÁRIO/LISTA ')
 
+# Adicionando dados em um dicionário pelo telado;
+# Porem só é possível fazer isso com 2 dados, sendo um a chave e o outro o valor.
+# Para colocar mais dados, teria que repetir o processo, manualmente ou em um laço.
+nomes = {}
+
+nome = str(input('Nome: '))
+nomes[nome] = int(input('Idade: '))
+
+
 # ATENÇÃO ISSO É MUITO IMPORTANTE: Não é possivel fazer uma cópia de um dicionário para uma lista usando fateamento [:].
 # Existe um metodo interno .copy()
 
