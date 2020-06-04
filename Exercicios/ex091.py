@@ -9,21 +9,23 @@ ORDEM, sabendo que o VENCEDOR tirou o MAIOR NÚMERO no DADO.
 from random import randint
 from time import sleep
 
-jogadores = {'jogador 1': randint(1, 6), 'jogador 2': randint(1, 6),
-             'jogador 3': randint(1, 6), 'jogador 4': randint(1, 6)
+jogadores = {'Darlan': randint(1, 6), 'Deivid': randint(1, 6),
+             'Fagner': randint(1, 6), 'Kalisson': randint(1, 6)
              }
 
 print('Valores sorteados:')
-
-for item in sorted(jogadores,reverse= True, key= jogadores.get):
-    print(f'O tirou: {jogadores[item]}')
-print()
-
-
-
-#for item in sorted(jogadores, key= jogadores.get):
-#    print(f' O jogador tirou {jogadores[item]}')
-
+for item in jogadores:
+    print(f'    O jogador {item} tirou {jogadores[item]}')
+    sleep(.5)
+print('='*40)
+sleep(1)
+print('Colocação dos jogadores:')
+cont = 1
+for c in range(1):
+    for item in sorted(jogadores, reverse=True, key=jogadores.get):
+        print(f'    em {cont}ª lugar {item}')
+        sleep(1)
+        cont += 1
 
 # ================ MELHORIA DO CÓDIGO ===================================================================
 
