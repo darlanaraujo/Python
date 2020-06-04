@@ -15,10 +15,9 @@ jogadores = {'jogador 1': randint(1, 6), 'jogador 2': randint(1, 6),
 
 print('Valores sorteados:')
 
-for k, i in jogadores.items():
-    for item in sorted(jogadores, key= jogadores.get):
-        print(f'O {k} tirou: {jogadores[item]}')
-    print()
+for item in sorted(jogadores,reverse= True, key= jogadores.get):
+    print(f'O tirou: {jogadores[item]}')
+print()
 
 
 
