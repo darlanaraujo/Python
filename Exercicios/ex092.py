@@ -6,3 +6,27 @@ Crie um programa que LEIA NOME, ANO DE NASCIMENTO e CARTEIRA DE TRABALHO e cadas
 receberá também o ANO DE CONTRATAÇÃO e o SALÁRIO. Calcule e acrescente, além da
 IDADE, com quantos anos a pessoa vai se APOSENTAR.
 '''
+# ===================== MODELO CRIADO =================================================================================
+from datetime import date
+dados = {}
+
+dados['Nome'] = str(input('Nome completo: '))
+ano = int(input('Ano de nascimento: '))
+dados['Idade'] = date.today().year - ano
+print('\033[33mCaso não tenha carteira de trabalho, digite \033[30m0\033[m')
+dados['CTPS'] = int(input('Numero da carteira: '))
+if dados['CTPS'] != 0:
+    dados['Contratação'] = int(input('Ano de contratação: '))
+    dados['Salário R$'] = float(input('Salário ganho: R$ '))
+    dados['Aposentadoria'] = (dados['Contratação'] +35) - ano
+
+print('='*40)
+for itens in dados:
+    print(f'{itens}: {dados[itens]}')
+
+
+# ===================== MELHORIA DO CÓDIGO =============================================================================
+
+# ===================== ANÁLISE DO CÓDIGO =============================================================================
+
+# ==================== MODELO CURSO EM VIDEO ==========================================================================
