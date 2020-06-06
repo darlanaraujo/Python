@@ -36,8 +36,6 @@ for p, v in enumerate(gols):
     print(f'    => Na {p +1}ª partida, fez {v} gols.')
 print(f'Sendo um total de {dados["Total"]} gols.')
 
-
-
 # ================= MELHORIA DO CÓDIGO ================================================================================
 
 # ================= ANAÁLISE DO CÓDIGO ================================================================================
