@@ -6,7 +6,7 @@ GUARDE esses RESULTADOS em um DICIONÁRIO. No final, coloque esse dicionário em
 ORDEM, sabendo que o VENCEDOR tirou o MAIOR NÚMERO no DADO.
 '''
 # ================ MODELO CRIADO ========================================================================
-from random import randint
+'''from random import randint
 from time import sleep
 
 jogadores = {'Darlan': randint(1, 6), 'Deivid': randint(1, 6),
@@ -28,9 +28,9 @@ for c in range(1):
         print(f'    {cont}ª lugar {item} com {jogadores[item]}')
         sleep(1)
         cont += 1
-
+'''
 # ================ MELHORIA DO CÓDIGO ===================================================================from random import randint
-'''from time import sleep
+from time import sleep
 from random import randint
 
 jogadores = {}
@@ -58,13 +58,44 @@ print('='*40)
 
 cont = 1
 for c in range(1):
-    for item in sorted(jogadores, reverse=True, key=jogadores.get):
+    for chave in sorted(jogadores, reverse=True, key=jogadores.get):
         sleep(1)
-        print(f'Em {cont}º lugar - {item} com {jogadores[item]}')
-        cont += 1'''
-
+        print(f'Em {cont}º lugar - {chave} com {jogadores[chave]}')
+        cont += 1
 # ================ ANÁLISE DO CÓDIGO ====================================================================
+'''
+Nesse código o meu modelo ficou mais coerente com o enunciado, uma vez que fiz todos programa usando apenas
+o dicionário. Não usei lista nem tupla, diferente do cógido do curso. A tecnica usada para definir a ordem
+dos dados, ambas são similares, mas a que usei não necessida de importação de função. Nesse ponto novamente
+meu código me parece melhor.
 
+Já o código aprimorado sem dúvida ficou muito melhor que todos, uma vez que não preciso definir as chaves
+antes, posso inserir a escolha do usuário, também utilizei funções variadas que dão uma melhor experiencia
+para o usuário.
+'''
 # ================ MODELO CURSO EM VIDEO ================================================================
+'''from random import randint
+from time import sleep
+from operator import itemgetter
+
+jogo = {'Jogador1': randint(1, 6),
+        'Jogador2': randint(1, 6),
+        'Jogador3': randint(1, 6),
+        'Jogador4': randint(1, 6)}
+
+ranking = []
+
+print('Valores sorteados:')
+for k, v in jogo.items():
+    print(f'O {k} tirou {v} no dado.')
+    sleep(1)
+
+print('-='*30)
+ranking = sorted(jogo.items(), key=itemgetter(1, 0), reverse=True)
+
+print('    == RANKING DOS JOGADORES ==')
+for p, v in enumerate(ranking):
+    print(f'    {p +1}º ficou {v[0]} com {v[1]}.')
+    sleep(1)'''
 
 
