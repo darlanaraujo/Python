@@ -27,5 +27,24 @@ for itens in dados:
 # ===================== MELHORIA DO CÓDIGO =============================================================================
 
 # ===================== ANÁLISE DO CÓDIGO =============================================================================
-
+'''
+Os dois códigos são muito parecidos, algumas poucas diferenças, sendo a forma de usar a função datetime, no código
+do curso achei muito desnecessário a quantidade de valores para chegar a um calculo de aposentadoria, o meu ficou mais
+simples e funcionando do mesmo jeito. E no final a forma de organizar os dados.
+'''
 # ==================== MODELO CURSO EM VIDEO ==========================================================================
+'''from datetime import datetime
+dados = dict()
+dados['nome'] = str(input('nome: '))
+nasc = int(input('Ano de Nascimento: '))
+dados['idade'] = datetime.now().year - nasc
+dados['CTPS'] = int(input('Carteira de Trabalho (0 não tem): '))
+if dados['CTPS'] != 0:
+    dados['contratação'] = int(input('Ano de Contratação: '))
+    dados['salário'] = float(input('Salário: R$ '))
+    dados['aposentadoria'] = dados['idade'] + ((dados['contratação'] + 35) - datetime.now().year)
+
+print('-='*30)
+for k, v in dados.items():
+    print(f'  - {k} tem o valor {v}')
+'''
