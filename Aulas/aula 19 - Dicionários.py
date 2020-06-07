@@ -50,7 +50,27 @@ del dados['idade'] #Assim o valor e o elemento são eliminados.
 print(dados)
 print()
 # ======================== OUTRA FORMA DE ORGANIZAR UM DICIONÁRIO =====================================================
-linhas(' OUTRA FORMA DE ORGANIZAR ')
+# Nos exercícios aprendi duas funções para organizar um dicionário.
+from random import randint
+from operator import itemgetter #Função para organizar um dicionário.
+linhas(' MODO DE ORGANIZAR UM DICIONÁRIO ')
+
+jogadores = {'Darlan': randint(1, 6), 'Deivid': randint(1, 6),
+             'Fagner': randint(1, 6), 'Kalisson': randint(1, 6)
+             }
+cont = 1
+for c in range(1):
+    for chave in sorted(jogadores, reverse=True, key=jogadores.get):
+        print(f'Em {cont}º lugar - {chave} com {jogadores[chave]}')
+        cont += 1
+
+# Outra forma...
+
+print(sorted(jogadores.items(), key=itemgetter(1, 0), reverse=True))
+# ======================= OS 3 ELEMENTOS DE UM DICIONÁRIO =============================================================
+linhas(' OS 3 ELEMENTOS DE UM DICIONÁRIO ')
+# Itens, Chaves ou Valores
+
 filmes = {'titulo': 'Star Wars',
          'ano': 1977,
          'diretor': 'George Lucas'
@@ -60,9 +80,6 @@ print(filmes['titulo'])
 print(filmes['ano'])
 print(filmes['diretor'])
 print()
-# ======================= OS 3 ELEMENTOS DE UM DICIONÁRIO =============================================================
-linhas(' OS 3 ELEMENTOS DE UM DICIONÁRIO ')
-# Itens, Chaves ou Valores
 
 print(filmes.values()) # Os valores são: Star Wars, 1977, George Lucas
 print(filmes.keys()) # As chaves são: titulo, ano, diretor
