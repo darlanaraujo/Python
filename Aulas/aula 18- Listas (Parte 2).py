@@ -55,6 +55,13 @@ print(galera[0][0][0])
 #O segundo [] mostra 1 item dentro dessa lista. No caso: Darlan
 #O terceiro [] mostra a primeira letra. No caso: D
 
+# ============== SOMANDO DADOS DENTRO DE UMA LISTA ============================
+print('='*30)
+num = [1, 2, 3, 4, 5]
+soma = sum(num)
+
+print(f'A soma de 1, 2, 3, 4, 5 é {soma}')
+
 # ============== FORMA DE SE USAR REPETIÇÕES COM AS LITAS =====================
 print('='*30)
 #Nesse exemplo mostramos todas as informações na lista
