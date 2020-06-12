@@ -23,5 +23,19 @@ area(a, b)
 # ================= MELHORIA DO CÓDIGO ================================================================================
 
 # ================= ANAÁLISE DO CÓDIGO ================================================================================
-
+'''
+Os dois códigos são muito parecidos. A diferença fica por conta da organização dos textos. Na minha opinião prefiro um
+código com espaçamentos entre seus passos ficando mais fácio a leitura.
+'''
 # ================= MODELO CURSO EM VIDEO =============================================================================
+'''def área(larg, comp):
+    a = larg * comp
+    print(f'A área de um terreno {larg} X {comp} é de {a}m²')
+
+
+#Programa principal
+print('Controle de Terrenos')
+print('-' * 20)
+l = float(input('LARGURA (m): '))
+c = float(input('COMPRIMENTO (m): '))
+área(l, c)'''
