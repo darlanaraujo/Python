@@ -39,7 +39,7 @@ print(f'Sendo um total de {dados["Total"]} gols.')'''
 '''
 A melhoria do código vai ficar para o próximo exercício que solicita essa melhoria.
 '''
-# ================= ANAÁLISE DO CÓDIGO ================================================================================
+# ================= ANÁLISE DO CÓDIGO ================================================================================
 '''
 Os códigos são parecidos nas funções. Gostei do recurso que ele usou para somar os valores dentro da lista usando uma
 função sum(). 
