@@ -62,7 +62,7 @@ while True:
             print(f'Não há cadastro na posição {cons}')'''
 
 # ================= MELHORIA DO CÓDIGO ================================================================================
-from time import sleep
+'''from time import sleep
 
 jogador = dict()
 dados = list()
@@ -102,7 +102,7 @@ def atleta():
     for p, v in enumerate(dados):
         #print(f'Na posição {p} encontrei {v}')
         if nome in dados[p]['nome']:
-            print(f'\033[33mNOME: \033[30m{v["nome"]} | \033[33mNº PARTIDAS: \033[30m{v["partidas"]} | \033[33mNº GOLS: \033[30m{(len(v["gols"]))}')
+            print(f'\033[33mNOME: \033[30m{v["nome"]} | \033[33mNº PARTIDAS: \033[30m{v["partidas"]} | \033[33mNº GOLS: \033[30m{(v["total"])}')
             print('-'*50)
             print('>>> \033[33mGols por partida:\033[30m')
             media = v['media']
@@ -179,6 +179,13 @@ def cadastro():
     dados.append(jogador.copy())
     jogador.clear()
 
+    print('Inserindo dados', end='')
+    for c in range(0, 5):
+        print('.', end='')
+        sleep(0.5)
+    print('\nDados inseridos com sucesso!')
+    sleep(1)
+
     confirma('\033[33mContinuar cadastrando? \033[30m[S/N]: ')
         
 
@@ -219,7 +226,52 @@ def comando():
 
 
 # Início do programa;
-inicio()
+inicio()'''
 # ================= ANAÁLISE DO CÓDIGO ================================================================================
 
 # ================= MODELO CURSO EM VIDEO =============================================================================
+time = list()
+jogador = dict()
+partidas = list()
+
+while True:
+    jogador.clear()
+    jogador['nome'] = str(input('Nome do Jogador: '))
+    tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
+    partidas.clear()
+
+    for c in range(0, tot):
+        partidas.append(int(input(f'     Quantos gols na partida {c}? ')))
+
+    jogador['gols'] = partidas[:]
+    jogador['total'] = sum(partidas)
+    time.append(jogador.copy())
+
+    while True:
+        resp = str(input('Quer continuar? [S/N]: ')).upper()[0]
+        if resp in 'SN':
+            break
+        print('ERRO! Responda apenas S ou N.')
+    if resp == 'N':
+        break
+print('-=' * 30)
+print('Cod ', end='')
+for i in jogador.keys():
+    print(f'{i:<15}', end='')
+print()
+print('-=' * 40)
+for k, v in enumerate(time):
+    print(f'{k:>3} ', end='')
+    for d in v.values():
+        print(f'{str(d):<15}', end='')
+    print()
+print('-='*40)
+
+while True:
+    busca = int(input('Mostrar dados de qual jogador? (999 para parar) '))
+    if busca == 999:
+        break
+    if busca >= len(time):
+        print(f'ERRO! Não existe jogador com código {busca}!')
+    else:
+        print(f' -- LEVANTAMENTO DO JOGADOR {time[busca]["nome"]}:')
