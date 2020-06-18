@@ -62,7 +62,7 @@ while True:
             print(f'Não há cadastro na posição {cons}')'''
 
 # ================= MELHORIA DO CÓDIGO ================================================================================
-'''from time import sleep
+from time import sleep
 
 jogador = dict()
 dados = list()
@@ -101,16 +101,17 @@ def atleta():
     print('#'*50)
     for p, v in enumerate(dados):
         #print(f'Na posição {p} encontrei {v}')
-        if nome in dados[p]['nome']:
+        if nome in v['nome']:
             print(f'\033[33mNOME: \033[30m{v["nome"]} | \033[33mNº PARTIDAS: \033[30m{v["partidas"]} | \033[33mNº GOLS: \033[30m{(v["total"])}')
             print('-'*50)
             print('>>> \033[33mGols por partida:\033[30m')
             media = v['media']
-            for p, v in enumerate(v['gols']):
+            #Esse é o local do erro. O laço está influenciando o resultado do while abaixo.
+            '''for p, v in enumerate(v['gols']):
                 print(f'     >> Na \033[33m{p +1}ª \033[30mpartida: \033[33m{v}\033[30m')
             print('-'*50)
             print(f'>>> Aproveitamento de \033[33m{media:.2f} gols \033[30mpor partida')
-            print('-'*50)
+            print('-'*50)'''
 
             while True:
                 resp = str(input('DESEJA ACRESCENTAR PARTIDA? [S/N]: ')).upper().strip()[0]
@@ -226,11 +227,16 @@ def comando():
 
 
 # Início do programa;
-inicio()'''
+inicio()
 # ================= ANAÁLISE DO CÓDIGO ================================================================================
+'''
+Comparando os dois códigos base, prefiro o meu código. A entrega do resultado ficou mais clara e detalhada.
 
+O código aprimorado, ainda estou tendo problema quando consulto uma lista de jogadores e ao escolher um e fazer edição
+nos seus dados, essa alteração está indo para o primeiro jogador cadastrado, e não para o jogador selecionado.
+'''
 # ================= MODELO CURSO EM VIDEO =============================================================================
-time = list()
+'''time = list()
 jogador = dict()
 partidas = list()
 
@@ -278,4 +284,4 @@ while True:
         for i, g in enumerate(time[busca]['gols']):
             print(f'    No jogo {i +1} fez {g} gols.')
     print('-' *40)
-print('<<  VOLTE SEMPRE >>')
+print('<<  VOLTE SEMPRE >>')'''
