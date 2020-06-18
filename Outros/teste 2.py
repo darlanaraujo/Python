@@ -1,15 +1,13 @@
-time = ('santos', 'vasco', 'flamengo')
+dados = []
+jogador = {'jogador': 'Darlan', 'partida': 2, 'gols': [1, 0], 'total': 2, 'media': 0.5}
+dados.append(jogador.copy())
+jogador.clear()
 
-print(time.count('santos'))
-num = int(input('Qual a posição da tabela: '))
-print(len(time[num]))
-'''while True:
-    num = int(input('Qual a posição da tabela: '))
-    print(time[num])
+jogador = {'jogador': 'Davi', 'partida': 2, 'gols': [3, 2], 'total': 5, 'media': 2.5}
+dados.append(jogador.copy())
 
-    resp = str(input('Deseja consultar outro time? [S/N]: ')).upper().strip()[0]
-    if resp == 'S':
-        print()
-    else:
-        print('Fim do programa!')
-        break'''
+for p, v in enumerate(dados):
+    print(f'Na posição: {p}, encontrei {v}')
+for k, v in jogador.items():
+    print(f'Na chave {k} encontrei {v}')
+
