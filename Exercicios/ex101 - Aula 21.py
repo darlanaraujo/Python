@@ -12,7 +12,7 @@ def voto(ano):
         --> A função recebe os dados da variável e faz uma veficação da data atual pela função data ano, e de acordo
         com a idade retorna o resultado.
     :param ano: Recebe a variável digitada pelo usuário
-    :return: Sem retorno de dados
+    :return: De acorodo com a soma da idade mostra se a pessoa NÃO VOTA - VOTO OPCIONAL - VOTO OBRIGATÓRIO
     '''
     hoje = date.today().year
     idade = hoje - ano
@@ -27,7 +27,7 @@ def voto(ano):
         print('VOTO OBRIGATÓRIO.')
         return 'VOTO OBRIGATÓRIO'
 
-
+help(voto)
 ano = int(input('Em que ano você nasceu? '))
 voto(ano)
     
