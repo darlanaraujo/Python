@@ -54,7 +54,12 @@ while True:
 # ============= CÓDIGO MELHORADO ======================================================================================
 
 # ============= ANÁLISE DO CÓDIGO =====================================================================================
-
+'''
+Os dois códigos são basicamente o mesmo. O meu código mesmo basico utilizou alguns recursos que melhora o código mesmo
+deixando-o mais longo. Mas com relação a solução e resultado, estão iguais. Destaco do código do curso a chamada do
+if show: que não foi necessário incluir o True uma vez que enquanto não for definido pelo usuário o parâmetro fica
+apagado, então, realmente não é necessário o uso.
+'''
 # ============= CÓDIGO CURSO EM VÍDEO =================================================================================
 def fatorial(n, show=False):
     f = 1
