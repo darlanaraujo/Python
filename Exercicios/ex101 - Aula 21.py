@@ -37,10 +37,13 @@ voto(ano)
 
 # ================== ANÁLISE DO CÓDIGO ================================================================================
 '''
-
+Os dois códigos ficaram basicamente iguais, a maior diferença foi a importação que ele usou dentro da função, assim,
+economizando memória. O uso do return apenas de ter inserido no meu código, ele não estava sendo mostrado na conclusão,
+apos ver o código do curso, identifiquei que o erro era não está chamando a função com um print, e apenas indicando a
+função.
 '''
 # ================== CÓDIGO CURSO EM VÍDEO ============================================================================
-def voto(ano):
+'''def voto(ano):
     from datetime import date
     atual = date.today().year
     idade = atual - ano
@@ -54,4 +57,4 @@ def voto(ano):
 
 # Programa principal
 nasc = int(input('Em que ano você nasceu? '))
-print(voto(nasc))
+print(voto(nasc))'''
