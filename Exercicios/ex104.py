@@ -27,7 +27,11 @@ print(f'Você acabou de digitar o número {n}')'''
 # ============= CÓDIGO MELHORADO ======================================================================================
 
 # ============= ANÁLISE DO CÓDIGO =====================================================================================
-
+'''
+Não consegui colocar o meu código para funcionar, minha linha de pensamento até estava correta, mas na hora de validar
+o laço eu não soube faze-lo de forma correta. O código do curso ficou simples (mesmo sendo complexo) e detalhei ao
+maximo cada função do código.
+'''
 # ============= CÓDIGO CURSO EM VÍDEO =================================================================================
 def leiaint(msg): # A msg é o texto 'Digite um número'
     ok = False # Essa variável é apenas para iniciar ou parar o laço.
