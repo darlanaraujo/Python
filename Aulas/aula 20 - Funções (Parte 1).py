@@ -71,6 +71,13 @@ contador(1, 3, 5, 9)
 contador(4, 1, 10)
 contador(2, 4)
 
+def lin(txt, msg):
+    print(txt)
+    print(msg)
+    print(txt)
+
+lin(txt= '='*30, msg='TEXTE COM TEXTO')
+
 separação('USANDO FUNÇÕES COM LISTAS')
 # Abaixo vamos usar uma função para dobrar o valor de uma lista.
 valores = [7, 2, 5, 0, 4]

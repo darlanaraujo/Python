@@ -101,16 +101,17 @@ def atleta():
     print('#'*50)
     for p, v in enumerate(dados):
         #print(f'Na posição {p} encontrei {v}')
-        if nome in dados[p]['nome']:
-            print(f'\033[33mNOME: \033[30m{v["nome"]} | \033[33mNº PARTIDAS: \033[30m{v["partidas"]} | \033[33mNº GOLS: \033[30m{(len(v["gols"]))}')
+        if nome in v['nome']:
+            print(f'\033[33mNOME: \033[30m{v["nome"]} | \033[33mNº PARTIDAS: \033[30m{v["partidas"]} | \033[33mNº GOLS: \033[30m{(v["total"])}')
             print('-'*50)
             print('>>> \033[33mGols por partida:\033[30m')
             media = v['media']
-            for p, v in enumerate(v['gols']):
+            #Esse é o local do erro. O laço está influenciando o resultado do while abaixo.
+            '''for p, v in enumerate(v['gols']):
                 print(f'     >> Na \033[33m{p +1}ª \033[30mpartida: \033[33m{v}\033[30m')
             print('-'*50)
             print(f'>>> Aproveitamento de \033[33m{media:.2f} gols \033[30mpor partida')
-            print('-'*50)
+            print('-'*50)'''
 
             while True:
                 resp = str(input('DESEJA ACRESCENTAR PARTIDA? [S/N]: ')).upper().strip()[0]
@@ -179,6 +180,13 @@ def cadastro():
     dados.append(jogador.copy())
     jogador.clear()
 
+    print('Inserindo dados', end='')
+    for c in range(0, 5):
+        print('.', end='')
+        sleep(0.5)
+    print('\nDados inseridos com sucesso!')
+    sleep(1)
+
     confirma('\033[33mContinuar cadastrando? \033[30m[S/N]: ')
         
 
@@ -221,5 +229,59 @@ def comando():
 # Início do programa;
 inicio()
 # ================= ANAÁLISE DO CÓDIGO ================================================================================
+'''
+Comparando os dois códigos base, prefiro o meu código. A entrega do resultado ficou mais clara e detalhada.
 
+O código aprimorado, ainda estou tendo problema quando consulto uma lista de jogadores e ao escolher um e fazer edição
+nos seus dados, essa alteração está indo para o primeiro jogador cadastrado, e não para o jogador selecionado.
+'''
 # ================= MODELO CURSO EM VIDEO =============================================================================
+'''time = list()
+jogador = dict()
+partidas = list()
+
+while True:
+    jogador.clear()
+    jogador['nome'] = str(input('Nome do Jogador: '))
+    tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
+    partidas.clear()
+
+    for c in range(0, tot):
+        partidas.append(int(input(f'     Quantos gols na partida {c +1}? ')))
+
+    jogador['gols'] = partidas[:]
+    jogador['total'] = sum(partidas)
+    time.append(jogador.copy())
+
+    while True:
+        resp = str(input('Quer continuar? [S/N]: ')).upper()[0]
+        if resp in 'SN':
+            break
+        print('ERRO! Responda apenas S ou N.')
+    if resp == 'N':
+        break
+print('-=' * 30)
+print('Cod ', end='')
+for i in jogador.keys():
+    print(f'{i:<15}', end='')
+print()
+print('-=' * 40)
+for k, v in enumerate(time):
+    print(f'{k:>3} ', end='')
+    for d in v.values():
+        print(f'{str(d):<15}', end='')
+    print()
+print('-='*40)
+
+while True:
+    busca = int(input('Mostrar dados de qual jogador? (999 para parar) '))
+    if busca == 999:
+        break
+    if busca >= len(time):
+        print(f'ERRO! Não existe jogador com código {busca}!')
+    else:
+        print(f' -- LEVANTAMENTO DO JOGADOR {time[busca]["nome"]}:')
+        for i, g in enumerate(time[busca]['gols']):
+            print(f'    No jogo {i +1} fez {g} gols.')
+    print('-' *40)
+print('<<  VOLTE SEMPRE >>')'''
