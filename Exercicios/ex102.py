@@ -28,7 +28,7 @@ def fatorial(n1, show=False):
     if show == True:
         f = 1
         print(f'Calculando o fatorial de {n1}! ', end='')
-        for c in range(n1, -0, -1):
+        for c in range(n1, 0, -1):
             print(f'{c}', end='')
             print(' x ' if c > 1 else ' = ', end='')
             f *= n1
@@ -36,6 +36,9 @@ def fatorial(n1, show=False):
         print(f)
 
 
+# Pograma principal
+help(fatorial)
+print(fatorial(6, True))
 n1 = int(input('Digite um número para ver o fatorial: '))
 print('-'*60)
 while True:
@@ -53,3 +56,18 @@ while True:
 # ============= ANÁLISE DO CÓDIGO =====================================================================================
 
 # ============= CÓDIGO CURSO EM VÍDEO =================================================================================
+def fatorial(n, show=False):
+    f = 1
+    for c in range(n, 0, -1):
+        if show:
+            print(c, end='')
+            if c > 1:
+                print(' x ', end='')
+            else:
+                print(' = ', end='')
+        f *= c
+    return f
+
+
+# Programa principal
+print(fatorial(5, True))
