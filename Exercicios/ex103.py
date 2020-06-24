@@ -32,7 +32,12 @@ else:
 # ================ CÓDIGO MELHORADO ===================================================================================
 
 # ================ ANÁLISE DO CÓDIGO ==================================================================================
-
+'''
+Análisando os dois código, a diferença fica apenas pela forma como a leitura dos parâmetros, aonde no meu eu uso 4
+possíveis resultados, já no código do curso, ele usou uma leitura que ainda não entendi. Um ponto importante foi ter
+tentado todas as possibilidades para usar a chamada dos gols como int e após vários erros cheguei a conclusão que só
+daria certo usando uma string, e o curso usou o mesmo recurso.
+'''
 # ================ CÓDIGO CURSO EM VÍDEO ==============================================================================
 '''def ficha(jog='<Desconhecido>', gol=0):
     print(f'O jogador {jog} fez {gol} gol(s) no campeonato')
