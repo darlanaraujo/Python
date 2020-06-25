@@ -13,7 +13,7 @@ com as seguintes informações:
 Adicione também as DOCSTRINGS da função.
 '''
 # ============ CÓDIGO BASE ============================================================================================
-def notas(* num, st=False):
+'''def notas(* num, st=False):
     """
         --> A função recebe os valores digitados, os coloca em um dicionário e faz um laço para separar os valores,
         mostrando o resultado de Maior Nota, Menor Nota, Média, e (opcional) a situação.
@@ -54,12 +54,18 @@ def notas(* num, st=False):
 
 
 help(notas)
-print(notas(1, 10, 7, 3.5, 9, st=True))
+print(notas(1, 10, 7, 3.5, 9, st=True))'''
 
 # ============ CÓDIGO MELHORADO =======================================================================================
 
 # ============ ANÁLISE DO CÓDIGO ======================================================================================
-
+'''
+O meu código mesmo sendo base vai além do enunciado, já que não apenas mostro o dicionário, mas faço uma separação dos
+dados deixando-os mais apresentaveis para o resultado. Além disso uso alguns recursos mais aprimorados. No entando o
+código do curso ficou mais organizado, já que a definição do dicionário é apresentado todo no início e de forma
+organizada. Outra coisa que o código do curso me mostrou foi a importancia de usar aspas duplas nas docstrings. Quando
+você precisa selecionar todo o código e coloca-lo como comentário usando três aspas simples, elas não dão conflitos.
+'''
 # ============ CÓDIGO DO CURSO EM VÍDEO ===============================================================================
 def notas(*n, sit=False):
     """
