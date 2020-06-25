@@ -8,6 +8,12 @@ Obs: Use CORES.
 '''
 # ============ CÓDIGO BASE ============================================================================================
 def ajuda(txt):
+    """
+        --> A função recebe um parâmetro de texto que é usado para interação com o usuário. Não digitar a palavra que
+        deseja saber o manual a função coloca essa palavra dentro da função help e devolve o conteúdo.
+    :param txt: Mensagem que é usada para interação com o usuário
+    :return: Mostra o manual das funções ou comando do Python.
+    """
     from time import sleep
     while True:
         print('\033[44;30m~'*40)
