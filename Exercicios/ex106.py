@@ -7,7 +7,16 @@ Quando o usuário digitar a palavra FIM, o programa se ENCERRARÁ.
 Obs: Use CORES.
 '''
 # ============ CÓDIGO BASE ============================================================================================
+def ajuda(txt):
+    print('\033[47;30m~'*40)
+    print(f'{"SISTEMA DE AJUDA PYTHON":^40}')
+    print('~'*40)
 
+    return txt
+
+#Programa principal
+a = ajuda('Função ou Biblíoteca >> ')
+print(a)
 # ============ CÓDIGO MELHORADO =======================================================================================
 
 # ============ ANÁLISE DO CÓDIGO ======================================================================================
