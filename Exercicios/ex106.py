@@ -46,7 +46,12 @@ ajuda('Digite a Função ou Comando: >> ')'''
 # ============ CÓDIGO MELHORADO =======================================================================================
 
 # ============ ANÁLISE DO CÓDIGO ======================================================================================
-
+'''
+O meu código atende todos os requisitos no enunciado. Apesar de ter usando uma chamada de parâmetro desnecessária, pois
+o texto poderia ter cido colocado dentro da função, ainda assim, o programa funciona. No entando o código do curso
+ficou mais organizado e com definições mais bem definidas. A organização das cores utilizando uma lista e a criação de
+uma função para criar um titulo personalizado, foram recursos muito bem pensados.
+'''
 # ============ CÓDIGO DO CURSO EM VÍDEO ===============================================================================
 from time import sleep
 c= ('\033[m',           # 0 - sem cores
