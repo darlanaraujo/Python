@@ -14,8 +14,8 @@ Um exemplo seria criar um pacote uteis e dentro dele separar as funcões por tem
 # ============= PRÁTICA / TEORIA ======================================================================================
 
 """
-Para criar um módulo o arquivo deve ter pelo menos duas funções. No modelo abaixo, temos 3 funções criadas, e posso
-importalas sitando a pasta e o modulo. from pasta import modulo.
+Para criar um módulo o arquivo deve ter pelo menos uma funções. No modelo abaixo, temos 3 funções criadas, e posso
+importa-las sitando a pasta e o modulo. from pasta import modulo.
 """
 # Modelo importando um item dentro do modulo. Nesse caso a pasta modulos é só um local que o modulo uteis está dentro.
 from modulos import uteiss
@@ -42,4 +42,10 @@ um com um nome e suas funções.
 Pacote com pacotes: Nesse caso eu crio um pacote principal, e dentro dele crio várias pastas, cada um com um nome. E ao
 invés de criar modulos, eu coloco as funções dentro do arquivo __init__.py. Assim cada pasta é um pacote e um modulo
 ao mesmo tempo, e a importação se da pelo nome da pasta.
+
+IMPORTANTE - Se um pacote principal que se chama uteis, tiver mais um (ou vários) chamado dados pacotes dentro dele,
+e dentro desses outros pacortes tiver módulos. A forma de importação é FROM UTEIS IMPORT DADOS.
+
+Mas caso dentro de um dos pacotes tenha outro pacote (ou vários) chamado nomes e dentro de cada um deles um módulo.
+A forma de importação é FROM UTEIS.DADOS IMPORT NOMES
 """
