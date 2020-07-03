@@ -4,11 +4,17 @@ DESAFIO 108
 Adapte o código do DESAFIO 107, criando uma função adicional chamada MOEDA() que consiga mostrar os valores como um
 valor monetário formatado.
 '''
-
+# ============= CÓDIGO BASE ===========================================================================================
 from modulos import moedas
 
-num = int(input('Digite um valor: '))
-print(f'O valor de {num} com aumento de 10% é {moedas.aumentar(num)}')
-print(f'O valor de {num} menos 25% é {moedas.diminuir(num)}')
-print(f'O valor de {num} dobrado é {moedas.dobro(num)}')
-print(f'O valor da metade de {num} é {moedas.metade(num)} ')
+num = float(input('Digite o preço: R$ '))
+print(f'O valor de {moedas.moeda(num)} com aumento de 10% é = {moedas.moeda(moedas.aumentar(num, 10))}')
+print(f'O valor de {moedas.moeda(num)} menos 13% é = {moedas.moeda(moedas.diminuir(num, 13))}')
+print(f'O valor de {moedas.moeda(num)} dobrado é = {moedas.moeda(moedas.dobro(num))}')
+print(f'O valor da metade de {moedas.moeda(num)} é = {moedas.moeda(moedas.metade(num))} ')
+
+# ============= CÓDIGO APRIMORADO =====================================================================================
+
+# ============= ANÁLISE DO CÓDIGO =====================================================================================
+
+# ============= CÓDIGO CURSO EM VÍDEO =================================================================================
