@@ -8,10 +8,15 @@ valores que seja MONETÁRIOS.
 # ============= CÓDIGO BASE ===========================================================================================
 from modulos.utlidadesCeV import dado, moeda
 
-p = dado.leiadinheiro('Digite um valor: R$ ')
+'''p = dado.leiadinheiro('Digite um valor: R$ ')'''
 
 # ============= CÓDIGO APRIMORADO =====================================================================================
 
 # ============= ANÁLISE DO CÓDIGO =====================================================================================
-
+'''
+A criação desse código é bem fácil e ambos os códigos são parecidos. A análise mais detalhada está dentro do módulo
+aonde as funções foram criadas.
+'''
 # ============= CÓDIGO CURSO EM VÍDEO =================================================================================
+p = dado.leiadinheiro('Digite o preço: R$ ')
+moeda.resumo(p, 35, 22)
