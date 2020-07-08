@@ -58,13 +58,19 @@ except:
     Aqui colocamos o comando que acontece caso haja uma falha.
 else:
     Aqui colocamos a solução caso o try: funcione.
+finally:
+    Aqui colocamos um comando ou msg para encerramento da ação.
     
 O comando try: é para tentar executar algo
 O comando except: é caso dê algum problema e ele pode mostrar outro resultado ou ação.
 Ao colocar o else: com a solução caso o programa não dê erro.
+O finally permite da um encerramento ao comando independente que dê certo ou errado.
 
 Isso faz com que mesmo tendo algum erro, ao invés de interromper o programa e aparecer a mensagem vermelha. O programa
 vai continuar funcionando (se estiver em um loop) e o programador pode colocar uma mensagem personalizada.
+
+Outra coisa que podemos fazer é usar o Exception as (variavel): e abaixo podemos descrever o tipo do erro.
+__class__ /
 '''
 
 # AULA PRÁTICA
@@ -72,7 +78,29 @@ try:
     a = int(input('Denominador: '))
     b = int(input('Divisor: '))
     r = a / b
-except:
-    print('Infelizmente tivemos um problema :(')
+except (ValueError, TypeError):
+    print('Tivemos um problema com o tipo de dado que digitou.')
+except ZeroDivisionError:
+    print('Não é possível dividir um número por zero!')
+except KeyboardInterrupt:
+    print('O usuário preferiu não informar os dados!')
+except Exception as erros:
+    print(f'O erro encontrado foi {erros.__cause__}')
 else:
     print(f'O resultado é {r}')
+finally:
+    print('Volte sempre! Muito obrigado.')
+
+# MAIS EXEMPLOS:
+
+try:
+    a = int(input('Denominador: '))
+    b = int(input('Divisor: '))
+    r = a / b
+except Exception as erro:
+    print('Infelizmente tivemos um problema :(')
+    print(f'O problema encontrado foi {erro.__class__}')
+else:
+    print(f'O resultado é {r}')
+finally:
+    print('Volte sempre! Muito obrigado.')
