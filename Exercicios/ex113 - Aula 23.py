@@ -5,7 +5,7 @@ Reescreva a função LEIAINT() que fizemos no DESAFIO 104, incluindo agora a pos
 de tipo inválido. Aproveite e crie também uma função LEIAFLOAT() com a mesma funcionalidade.
 '''
 # ============== CÓDIGO BASE ==========================================================================================
-'''def leiaint(msg):
+def leiaint(msg):
     try:
         n = str(input(msg)).strip()
         n = int(n)
@@ -36,13 +36,24 @@ def leiafloat(msg):
 
 n = leiaint('Digite um número inteiro: ')
 r = leiafloat('Digite um número real: ')
-print(f'O valor inteiro digitado foi {n} e o real foi {r}')'''
+print(f'O valor inteiro digitado foi {n} e o real foi {r}')
 # ============== CÓDIGO MELHORADO =====================================================================================
 
 # ============== ANÁLISE DO CÓDIGO ====================================================================================
+'''
+A comparação dos códigos ambos funcionaram do mesmo jeito, com os mesmos recursos. Na minha opinião, o código do curso
+usou alguns recursos desnecessários, como o while para ter um loop e o comando continue que em tese materia o loop
+funcionando. O meu código não foi necessário o loop uma vez que ao identificar o erro o programa pode dar um return
+para a função, mas mesmo se tivesse usado o loop não precisava do continue.
 
+Outro ponto que no meu código ficou mais completo, é que eu faço o tratamento da string para int / float.
+
+Mas ambos os códigos funcionam do mesmo jeito. A única coisa que não ficou claro é que no vídeo ao interromper o código
+o programa dele mostrava um erro, e depois de fazer a excessão uma mensagem. No meu programa isso não acontece, mesmo
+usando o código do curso.  
+'''
 # ============== CÓDIGO CURSO EM VÍDEO ================================================================================
-def leiaint(msg):
+'''def leiaint(msg):
     while True:
         try:
             n = int(input(msg))
@@ -72,4 +83,4 @@ def leiafloat(msg):
 
 n1 = leiaint('Digite um inteiro: ')
 n2 = leiafloat('Digite um real: ')
-print(f'O número inteiro digitado foi {n1} e o real foi {n2}')
+print(f'O número inteiro digitado foi {n1} e o real foi {n2}')'''
