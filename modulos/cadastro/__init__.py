@@ -87,7 +87,7 @@ PARTE 2 - Essa parte eu não consegui fazer, não havia nenhuma aula anterior qu
 As funções que foram criadas para conferir se arquivo existia ou se seria necessário cria-lo está dentro do modulo
 modulos/cadastro/arquivo.
 
-PARTE 3 - 
+PARTE 3 - Essa parte acabei nao fazendo. Optei por terminar de ver a conclusão do curso.
 '''
 # ============== CÓDIGO CURSO EM VÍDEO ================================================================================
 def leiaint(msg):
