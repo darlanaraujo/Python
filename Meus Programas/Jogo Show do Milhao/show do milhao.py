@@ -1,4 +1,3 @@
+from modulos.lib.showmilhao import *
 
-
-
-inicio('JOGO SHOW DO MILHÃO V1.0')
+inicio()
