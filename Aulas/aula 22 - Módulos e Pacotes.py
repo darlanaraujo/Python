@@ -44,8 +44,8 @@ invés de criar modulos, eu coloco as funções dentro do arquivo __init__.py. A
 ao mesmo tempo, e a importação se da pelo nome da pasta.
 
 IMPORTANTE - Se um pacote principal que se chama uteis, tiver mais um (ou vários) chamado dados pacotes dentro dele,
-e dentro desses outros pacortes tiver módulos. A forma de importação é FROM UTEIS IMPORT DADOS.
+e dentro desses outros pacortes tiver módulos. A forma de importação é FROM UTEIS IMPORT DADOS. OU FROM UTEIS IMPORT *
 
 Mas caso dentro de um dos pacotes tenha outro pacote (ou vários) chamado nomes e dentro de cada um deles um módulo.
-A forma de importação é FROM UTEIS.DADOS IMPORT NOMES
+A forma de importação é FROM UTEIS.DADOS IMPORT NOMES. OU FROM UTEIS IMPORT *.
 """
