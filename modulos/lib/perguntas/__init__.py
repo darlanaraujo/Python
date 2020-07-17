@@ -8,19 +8,20 @@ pergunta_niv1 = ['Qual o meu nome? \nA) Darlan Araujo \nB) Fabil Santana \nC) An
                  ]
 
 resposta_niv1 = ['A',
-                'B',
-                'D',
-                ]
-
+                 'B',
+                 'D',
+                 ]
 
 sorteio = randint(0, 2)
+
+
 # ======================= FUNÇÕES DE PERGUNTAS DO JOGO ================================================================
 def capa():
-    cabeçalho('SHOW DO MILHÃO - 1ª RODADA')
+    cabeçalho('=', 'PRIMEIRA RODADA VALENDO R$ 1.000,00 REAIS')
     while True:
-        resp = str('VAMOS SOMEÇAR? [S/N]: ').upper().strip()[0]
+        resp = str(input('VAMOS SOMEÇAR? [S/N]: ')).upper().strip()[0]
         if resp == 'S':
-            return perguntas()
+            perguntas()
         elif resp == 'N':
             linha()
             print('Saindo do jogo', end='')
@@ -49,4 +50,3 @@ def perguntas():
         print('PARABÉNS! Você acertou.')
     else:
         print('Que pena, você errou!')
-
