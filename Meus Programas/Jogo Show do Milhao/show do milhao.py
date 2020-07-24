@@ -129,4 +129,5 @@ def erro(msg):
     print(f'{vm}{msg}{br}')
     linha()
 # ===================== INÍCIO DO PROGRAMA ============================================================================
+inicio()
 print(perg_nivel_1[0])
