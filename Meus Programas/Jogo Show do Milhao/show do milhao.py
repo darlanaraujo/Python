@@ -20,6 +20,26 @@ vd = '\033[32m'  # 3 = Verde
 am = '\033[33m'  # 4 = Amarelo
 az = '\033[34m'  # 5 = Azul
 rx = '\033[35m'  # 6 = Roxo
+
+fvm = '\033[41;30m'
+
+# ===================== PERGUNTAS DO JOGO =============================================================================
+perg_nivel_1 = [f'{fvm}>>>  Em que estado brasileiro nasceu a apresentadora Xuxa?   {sc}'
+                f'\n{am}A) {br}RIO DE JANEIRO'
+                f'\n{am}B) {br}RIO GRANDE DO SUL'
+                f'\n{am}C) {br}SANTA CATARINA'
+                f'\n{am}D) {br}GOIÁS',
+
+                f'{fvm}>>>  msg   {sc}'
+                f'\n{am}A) {br}msg'
+                f'\n{am}B) {br}msg'
+                f'\n{am}C) {br}msg'
+                f'\n{am}D) {br}msg',
+                ]
+
+
+
+
 # ===================== FUNÇÕES DO JOGO ===============================================================================
 def inicio():
     layout()
@@ -109,4 +129,4 @@ def erro(msg):
     print(f'{vm}{msg}{br}')
     linha()
 # ===================== INÍCIO DO PROGRAMA ============================================================================
-inicio()
+print(perg_nivel_1[0])
