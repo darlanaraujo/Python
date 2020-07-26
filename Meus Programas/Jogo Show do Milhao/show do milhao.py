@@ -441,6 +441,22 @@ def pula(proxima, p):
 
 
 def rodada1():
+    """
+    P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+        será escolhida.
+    pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+        indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+        repetem, isso é feito na variável sorteio em variáveis globais).
+    resposta: Ocorre o mesmo que na pergunta.
+    cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+        chamada moeda, apenas para converter inteiro para o formato dinheiro.
+    SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+        aúdio está.
+    :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+        posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+        rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+        recurso da ajuda pular.
+    """
     p = 0
     pergunta = nivel1['pergunta'][sorteio[0]]
     resposta = nivel1['resposta'][sorteio[0]]
@@ -451,6 +467,22 @@ def rodada1():
 
 
 def rodada2():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 1
     pergunta = nivel1['pergunta'][sorteio[1]]
     resposta = nivel1['resposta'][sorteio[1]]
@@ -461,6 +493,22 @@ def rodada2():
 
 
 def rodada3():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 2
     pergunta = nivel1['pergunta'][sorteio[2]]
     resposta = nivel1['resposta'][sorteio[2]]
@@ -471,6 +519,22 @@ def rodada3():
 
 
 def rodada4():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 3
     pergunta = nivel1['pergunta'][sorteio[3]]
     resposta = nivel1['resposta'][sorteio[3]]
@@ -481,6 +545,22 @@ def rodada4():
 
 
 def rodada5():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 4
     pergunta = nivel1['pergunta'][sorteio[4]]
     resposta = nivel1['resposta'][sorteio[4]]
@@ -491,6 +571,22 @@ def rodada5():
 
 
 def rodada6():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 5
     pergunta = nivel2['pergunta'][sorteio[0]]
     resposta = nivel2['resposta'][sorteio[0]]
@@ -501,6 +597,22 @@ def rodada6():
 
 
 def rodada7():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 6
     pergunta = nivel2['pergunta'][sorteio[1]]
     resposta = nivel2['resposta'][sorteio[1]]
@@ -511,6 +623,22 @@ def rodada7():
 
 
 def rodada8():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 7
     pergunta = nivel2['pergunta'][sorteio[2]]
     resposta = nivel2['resposta'][sorteio[2]]
@@ -521,6 +649,22 @@ def rodada8():
 
 
 def rodada9():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 8
     pergunta = nivel2['pergunta'][sorteio[3]]
     resposta = nivel2['resposta'][sorteio[3]]
@@ -531,6 +675,22 @@ def rodada9():
 
 
 def rodada10():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 9
     pergunta = nivel2['pergunta'][sorteio[4]]
     resposta = nivel2['resposta'][sorteio[4]]
@@ -541,6 +701,22 @@ def rodada10():
 
 
 def rodada11():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 10
     pergunta = nivel3['pergunta'][sorteio[0]]
     resposta = nivel3['resposta'][sorteio[0]]
@@ -551,6 +727,22 @@ def rodada11():
 
 
 def rodada12():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 11
     pergunta = nivel3['pergunta'][sorteio[1]]
     resposta = nivel3['resposta'][sorteio[1]]
@@ -561,6 +753,22 @@ def rodada12():
 
 
 def rodada13():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 12
     pergunta = nivel3['pergunta'][sorteio[2]]
     resposta = nivel3['resposta'][sorteio[2]]
@@ -571,6 +779,22 @@ def rodada13():
 
 
 def rodada14():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 13
     pergunta = nivel3['pergunta'][sorteio[3]]
     resposta = nivel3['resposta'][sorteio[3]]
@@ -581,6 +805,22 @@ def rodada14():
 
 
 def rodada15():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 14
     pergunta = nivel3['pergunta'][sorteio[4]]
     resposta = nivel3['resposta'][sorteio[4]]
@@ -591,6 +831,22 @@ def rodada15():
 
 
 def rodada16():
+    """
+        P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
+            será escolhida.
+        pergunta: É definido o nivel, a variável sorteio faz a escolha da pergunta e após essa escolha é selecionada o
+            indice 0 (Lembrando que o sorteio é feito uma vez de forma que não aja números iguais, assim as perguntas não se
+            repetem, isso é feito na variável sorteio em variáveis globais).
+        resposta: Ocorre o mesmo que na pergunta.
+        cabecalho: Dentro da função é colocado a variável valor (definida em variáveis globais) dentro de outra função
+            chamada moeda, apenas para converter inteiro para o formato dinheiro.
+        SOM: A função som usa os recursos da bibliotéca pygame. Ela recebe o parâmetro que apenas indica o caminho que o
+            aúdio está.
+        :return: O retorno indica a função perguntas, recebeno como parâmetro a pergunta e resposta, assim a cada rodada
+            posso ter o controle para que não se repitam definindo o indice. Também recebe o parâmetro que define a próxima
+            rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
+            recurso da ajuda pular.
+        """
     p = 15
     pergunta = nivel4['pergunta'][sorteio[0]]
     resposta = nivel4['resposta'][sorteio[0]]
