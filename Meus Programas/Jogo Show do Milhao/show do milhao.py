@@ -23,6 +23,11 @@ cartas = 1
 convidados = 1
 colegas = 1
 
+# Definição dos valores para cada rodada;
+valor = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
+
+# Definição para a variável de premio que será exibida ao termino da jogada e mostrá-ra o valor ganho pelo jogador.
+premio = 0
 # ===================== PERGUNTAS DO JOGO =============================================================================
 # Formulário base para as perguntas;
 f'{fvm}>>>  msg   {sc}'
@@ -93,7 +98,8 @@ nivel1 = {'pergunta': [
     f'\n{am}C) {br}7 DE SETEMBRO'
     f'\n{am}D) {br}25 DE DEZEMBRO',
 ],
-    'resposta':['B', 'B', 'C', 'B', 'B', 'D', 'C', 'C', 'B', 'C',]}
+    'resposta':['B', 'B', 'C', 'B', 'B', 'D', 'C', 'C', 'B', 'C',]
+}
 
 nivel2 = {'pergunta': [
     # Pergunta 0
@@ -158,7 +164,6 @@ nivel2 = {'pergunta': [
     f'\n{am}D) {br}msg'
 ],
     'resposta':['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
-
 }
 
 nivel3 = {'pergunta': [
@@ -224,7 +229,6 @@ nivel3 = {'pergunta': [
     f'\n{am}D) {br}msg'
 ],
     'resposta':['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
-
 }
 
 nivel4 = {'pergunta': [
@@ -290,67 +294,126 @@ nivel4 = {'pergunta': [
     f'\n{am}D) {br}msg'
 ],
     'resposta':['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
-
 }
 
+# Foi criado esse dicionário para serem usadas quando o jogador quiser pular no jogo, assim evito a repetição;
 pulos = {'pergunta': [
+    # Pergunta 0
     f'{fvm}>>>  Qual personagem da turma da Mônica tem apenas cinco fios de cabelo?   {sc}'
     f'\n{am}A) {br}MÔNICA'
     f'\n{am}B) {br}CEBOLINHA'
     f'\n{am}C) {br}CASCÃO'
     f'\n{am}D) {br}MAGALI',
-    
+    # Pergunta 1
     f'{fvm}>>>  Qual cantora tinha o apelido de “Ternurinha” na época da jovem guarda?   {sc}'
     f'\n{am}A) {br}SILVINHA'
     f'\n{am}B) {br}WANDERLÉIA'
     f'\n{am}C) {br}GRETCHEN'
     f'\n{am}D) {br}MARTINHA',
-    
+    # Pergunta 2
     f'{fvm}>>>  Quantas dentições naturais tem o ser humano durante a vida?   {sc}'
     f'\n{am}A) {br}UMA'
     f'\n{am}B) {br}DUAS'
     f'\n{am}C) {br}TRÊS'
     f'\n{am}D) {br}QUATRO',
-    
+    # Pergunta 3
     f'{fvm}>>>  Quantos dias tem um ano bissexto?   {sc}'
     f'\n{am}A) {br}364'
     f'\n{am}B) {br}365'
     f'\n{am}C) {br}366'
     f'\n{am}D) {br}367',
-    
+    # Pergunta 4
     f'{fvm}>>>  Quem foi técnico da Seleção brasileira de futebol na Copa de 98?   {sc}'
     f'\n{am}A) {br}ZAGALLO'
     f'\n{am}B) {br}SCOLARI'
     f'\n{am}C) {br}LUXEMBURGO'
     f'\n{am}D) {br}CARPEGIANNI',
-    
+    # Pergunta 5
     f'{fvm}>>>  O dromedário tem quantas corcovas?   {sc}'
     f'\n{am}A) {br}UMA'
     f'\n{am}B) {br}DUAS'
     f'\n{am}C) {br}TRÊS'
     f'\n{am}D) {br}QUATRO',
+    # Pergunta 6
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 7
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 8
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 9
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 10
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 11
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 12
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 13
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 14
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
+    # Pergunta 15
+        f'{fvm}>>>  msg   {sc}'
+        f'\n{am}A) {br}msg'
+        f'\n{am}B) {br}msg'
+        f'\n{am}C) {br}msg'
+        f'\n{am}D) {br}msg',
 ],
     
-    'resposta': ['B', 'B', 'B', 'C', 'A', 'A']}
+    'resposta': ['B', 'B', 'B', 'C', 'A', 'A', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
+}
 
 
-# Essa função faz com que o sorteio não se repita.
+# Essa função faz com que o sorteio não se repita; Lembrando que a ordem do sorteio corresponde a ordem das perguntas;
 sorteio = []
 while len(sorteio) != len(nivel1['pergunta']):
     r = randint(0, len(nivel1['pergunta']) -1)
     if r not in sorteio:
         sorteio.append(r)
-    
+
+# O mesmo ocorre para as perguntas da função pular;
 pular = []
 while len(pular) != len(pulos['pergunta']):
     r = randint(0, len(pulos['pergunta']) - 1)
     if r not in pular:
         pular.append(r)
 
-
-valor = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
-
-premio = 0
 
 # ===================== PERGUNTAS DO JOGO =============================================================================
 def perguntas(pergunta, resposta, proxima, p):
