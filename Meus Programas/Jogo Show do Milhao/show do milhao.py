@@ -103,67 +103,67 @@ nivel1 = {'pergunta': [
 
 nivel2 = {'pergunta': [
     # Pergunta 0
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Quantos jogadores um jogo de vôlei reúne na quadra?   {sc}'
+    f'\n{am}A) {br}SEIS'
+    f'\n{am}B) {br}OITO'
+    f'\n{am}C) {br}DEZ'
+    f'\n{am}D) {br}DOZE',
     # Pergunta 1
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Que imperador pôs fogo em Roma?   {sc}'
+    f'\n{am}A) {br}TRAJANO'
+    f'\n{am}B) {br}NERO'
+    f'\n{am}C) {br}BRUTOS'
+    f'\n{am}D) {br}CALÍGULA',
     # Pergunta 2
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Como é chamado quem nasce em Milão, na Itália?   {sc}'
+    f'\n{am}A) {br}MILANENSE'
+    f'\n{am}B) {br}MILANOSO'
+    f'\n{am}C) {br}MILISTA'
+    f'\n{am}D) {br}MILANÊS',
     # Pergunta 3
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que é um oboé?   {sc}'
+    f'\n{am}A) {br}VULCÃO'
+    f'\n{am}B) {br}COMIDA'
+    f'\n{am}C) {br}INSTRUMENTO MUSICAL'
+    f'\n{am}D) {br}TRIBO INDÍGENA',
     # Pergunta 4
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que é gôndola?   {sc}'
+    f'\n{am}A) {br}EMBARCAÇÃO'
+    f'\n{am}B) {br}BRINQUEDO'
+    f'\n{am}C) {br}MÚSICA'
+    f'\n{am}D) {br}SÍMBOLO',
     # Pergunta 5
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Como é chamada a cantora que representa o papel principal em uma ópera?   {sc}'
+    f'\n{am}A) {br}PRIMEIRA DAMA'
+    f'\n{am}B) {br}DONA-PRIMA'
+    f'\n{am}C) {br}PRIMA-DONA'
+    f'\n{am}D) {br}OBRA-PRIMA',
     # Pergunta 6
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Que rio corta a cidade de Londres, na Inglaterra?   {sc}'
+    f'\n{am}A) {br}TÂMISA'
+    f'\n{am}B) {br}SENA'
+    f'\n{am}C) {br}RENO'
+    f'\n{am}D) {br}AUBE',
     # Pergunta 7
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual cantor ficou conhecido como “O rei da voz”?   {sc}'
+    f'\n{am}A) {br}ORLANDO SILVA'
+    f'\n{am}B) {br}VICENTE CELESTINO'
+    f'\n{am}C) {br}FRANCISCO ALVES'
+    f'\n{am}D) {br}CARLOS GALHARDO',
     # Pergunta 8
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Quantos quilates tem o ouro puro?   {sc}'
+    f'\n{am}A) {br}18'
+    f'\n{am}B) {br}20'
+    f'\n{am}C) {br}24'
+    f'\n{am}D) {br}30',
     # Pergunta 9
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg'
+    f'{fvm}>>>  De quantos em quantos anos aparece o cometa Halley?   {sc}'
+    f'\n{am}A) {br}57 ANOS'
+    f'\n{am}B) {br}67 ANOS'
+    f'\n{am}C) {br}76 ANOS'
+    f'\n{am}D) {br}79 ANOS'
 ],
-    'resposta':['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
+    'resposta':['D', 'B', 'D', 'C', 'A', 'C', 'A', 'C', 'C', 'C',]
 }
 
 nivel3 = {'pergunta': [
