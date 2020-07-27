@@ -18,9 +18,9 @@ fvm = '\033[41;30m'  # 7 = Fundo Vermelho Letra Branca
 
 # Ajudas do jogo;
 pulo = 3
-cartas = 1
-convidados = 1
-colegas = 1
+carta = 1
+convidado = 1
+colega = 1
 # ===================== PERGUNTAS DO JOGO =============================================================================
 
 # Formulário base para as perguntas;
@@ -166,41 +166,9 @@ def perguntas(pergunta, resposta, proxima, p):
     escolha = str(input('VOCÊ VAI RESPONDER OU PEDIR AJUDA? [R/A]: ')).upper().strip()[0]
     linha()
     if escolha == 'R':
-        som('audio/frase_pergunta_certa.mp3')
-        while True:
-            resp = str(input('QUAL A RESPOSTA CERTA? ')).upper().strip()[0]
-            linha()
-            som('audio/frase_pergunta.mp3')
-            resp2 = str(input('VOCÊ ESTÁ CERTO DISSO, POSSO PERGUNTAR? [S/N]: ')).upper().strip()[0]
-            linha()
-            if resp2 == 'S':
-                if resp == resposta:
-                    som('audio/frase_parabens.mp3')
-                    print('CERTA RESPOSTA!')
-                    som('audio/frase_acerto.mp3')
-                    parar()
-                    proxima()
-                else:
-                    som('audio/frase_erro.mp3')
-                    print('QUE PENA, VOCÊ ERROU!')
-                    sair()
-                    break
-            elif resp2 == 'N':
-                continue
-            else:
-                erro(f'ERRO! dados inválidos, digite apenas {am}S{br} ou {am}N{br}.')
+        confirmacao(pergunta, resposta, proxima)
     elif escolha == 'A':
-        som('audio/frase_ajuda1.mp3')
-        print('A) PULAR')
-        print('B) CARTAS')
-        print('C) CONVIDADOS')
-        print('D) COLEGAS')
-        linha()
-        som('audio/frase_ajuda2.mp3')
-        resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
-        linha()
-        if resp == 'A':
-            pula(proxima, p)
+        menu_ajuda(pergunta, resposta, proxima, p)
     else:
         erro(f'ERRO! Dados inválidos, digite apenas {am}R{br} ou {am}A{br}.')
 
@@ -213,6 +181,41 @@ def pula(proxima, p):
     pergunta = pulos['pergunta'][pular[p]]
     resposta = pulos['resposta'][pular[p]]
     
+    print(pergunta)
+    linha()
+    confirmacao(pergunta, resposta, proxima)
+            
+
+def cartas(pergunta, resposta, proxima):
+    pergunta = pergunta
+    resposta = resposta
+    opcoes = ['A', 'B', 'C', 'D']
+
+    som('audio/frase_cartas.mp3')
+
+    excluir = randint(1, 3)
+    print(f'Você tirou um {excluir} !', end=' ')
+    sleep(1)
+    if excluir == 1:
+        print('Que pena, você ainda tem 3 opções!')
+    elif excluir == 2:
+        print('Boa! só resta 2 opções agora.')
+    elif excluir == 3:
+        print('Parabéns! Agora ficou fácil...')
+
+    print('Desconsidere as opções:', end=' ')
+    for c in range(excluir):
+        for p, v in enumerate(opcoes):
+            if v != resposta:
+                print(f'{vm} - {v}{br}', end='')
+    print('\n')
+
+    sleep(1)
+    linha()
+    confirmacao(pergunta, resposta, proxima)
+
+
+def confirmacao(pergunta, resposta, proxima):
     print(pergunta)
     linha()
     som('audio/frase_pergunta_certa.mp3')
@@ -237,8 +240,24 @@ def pula(proxima, p):
         elif resp2 == 'N':
             continue
         else:
-            erro('ERRO! dados inválidos, digite corretamente!')
-            
+            erro(f'ERRO! dados inválidos, digite apenas {am}S{br} ou {am}N{br}.')
+
+
+def menu_ajuda(pergunta, resposta, proxima, p):
+    som('audio/frase_ajuda1.mp3')
+    print('A) PULAR')
+    print('B) CARTAS')
+    print('C) CONVIDADOS')
+    print('D) COLEGAS')
+    linha()
+    som('audio/frase_ajuda2.mp3')
+    resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
+    linha()
+    if resp == 'A':
+        pula(proxima, p)
+    elif resp == 'B':
+        cartas(pergunta, resposta, proxima)
+
 
 def rodada1():
     p = 0
@@ -381,7 +400,7 @@ def layout():
 
 def placar():
     print(
-        f'| {am}{" AJUDAS DO JOGO >>> "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{cartas}{br} | {"CONVIDADOS: "} {am}{convidados}{br} | {"COLEGAS: "} {am}{colegas}{br} |')
+        f'| {am}{" AJUDAS DO JOGO >>> "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} | {"CONVIDADOS: "} {am}{convidado}{br} | {"COLEGAS: "} {am}{colega}{br} |')
     linha('=')
 
 
@@ -410,4 +429,40 @@ def erro(msg):
 
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
-inicio()
+#inicio()
+
+resposta = nivel1['resposta'][sorteio[0]]
+opcoes = ['A', 'B', 'C', 'D']
+excluir = randint(1, 3)
+
+print(f'númeo de cartas excluida: {excluir}')
+print(f'Resposta certa: {resposta}')
+
+print(f'Você tirou um {excluir} !', end=' ')
+if excluir == 1:
+    print('Que pena, você ainda tem 3 opções!')
+elif excluir == 2:
+    print('Boa! só resta 2 opções agora.')
+elif excluir == 3:
+    print('Parabéns! Agora ficou fácil...')
+
+print('Desconsidere as opções:', end=' ')
+
+lista = []
+
+for p, v in enumerate(opcoes):
+    if p + 1 != excluir:
+        if resposta != v:
+            lista.append(v)
+
+print(lista)
+
+'''for p, v in enumerate(opcoes):
+    if resposta != v:
+        print(f'{vm} - {v}{br}', end='')
+    else:
+        break'''
+
+'''for p, v in enumerate(opcoes):
+    for c in range(1):
+        print(f'Volta número {p}')'''
