@@ -424,7 +424,7 @@ def perguntas(pergunta, resposta, proxima, p):
     linha()
     som('audio/frase_entendeu.mp3')
     som('audio/frase_opcoes.mp3')
-    escolha = str(input('VOCÊ VAI RESPONDER OU PEDIR AJUDA? [R/A]: ')).upper().strip()[0]
+    escolha = str(input(f'VOCÊ VAI RESPONDER OU PEDIR AJUDA? {am}[R/A]{br}: ')).upper().strip()[0]
     linha()
     if escolha == 'R':
         confirmacao(pergunta, resposta, proxima)
@@ -434,51 +434,60 @@ def perguntas(pergunta, resposta, proxima, p):
         erro(f'ERRO! Dados inválidos, digite apenas {am}R{br} ou {am}A{br}.')
 
 
-def pula(proxima, p):
+def pula(pergunta, resposta, proxima, p):
     global pulo
-    pulo -= 1
-    som('audio/frase_pular.mp3')
-
-    pergunta = pulos['pergunta'][pular[p]]
-    resposta = pulos['resposta'][pular[p]]
-
-    print(pergunta)
-    linha()
-    confirmacao(pergunta, resposta, proxima)
+    
+    if pulo > 0:
+        pulo -= 1
+        som('audio/frase_pular.mp3')
+    
+        pergunta = pulos['pergunta'][pular[p]]
+        resposta = pulos['resposta'][pular[p]]
+    
+        print(pergunta)
+        linha()
+        confirmacao(pergunta, resposta, proxima)
+    else:
+        erro('Você já pulou 3 vezes. Você não tem mais essa opção!')
+        menu_ajuda(pergunta, resposta, proxima, p)
 
 
 def cartas(pergunta, resposta, proxima):
     global carta
-    carta -= 1
+    
+    if carta > 0:
+        carta -= 1
+        pergunta = pergunta
+        resposta = resposta
 
-    pergunta = pergunta
-    resposta = resposta
-
-    opcoes = ['A', 'B', 'C', 'D']
-
-    som('audio/frase_cartas.mp3')
-    excluir = randint(1, 3)
-
-    print(f'Você tirou um {excluir} !', end=' ')
-    sleep(1)
-    if excluir == 1:
-        print('Que pena, você ainda tem 3 opções!')
-    elif excluir == 2:
-        print('Boa! só resta 2 opções agora.')
-    elif excluir == 3:
-        print('Parabéns! Agora ficou fácil...')
-
-    print('Desconsidere as opções:', end=' ')
-    for c in range(excluir):
+        opcoes = ['A', 'B', 'C', 'D']
+        lista = []
         for p, v in enumerate(opcoes):
-            if v != resposta:
-                print(f'{vm} - {v}{br}', end='')
-    print('\n')
-
-    sleep(1)
-    linha()
-    confirmacao(pergunta, resposta, proxima)
-
+            if resposta != v:
+                lista.append(v)
+    
+        som('audio/frase_cartas.mp3')
+        excluir = randint(1, 3)
+    
+        print(f'Você tirou um {excluir} !', end=' ')
+        sleep(1)
+        if excluir == 1:
+            print('Que pena, você ainda tem 3 opções!')
+        elif excluir == 2:
+            print('Boa! só resta 2 opções agora.')
+        elif excluir == 3:
+            print('Parabéns! Agora ficou fácil...')
+    
+        print('Desconsidere as opções:', end=' ')
+        print(f'{vm}{lista[-3: -0 + excluir]}{br}')
+    
+        sleep(1)
+        linha()
+        confirmacao(pergunta, resposta, proxima)
+    else:
+        erro('Você já usou essa opção de ajuda!')
+        menu_ajuda(pergunta, resposta, proxima, p)
+        
 
 def confirmacao(pergunta, resposta, proxima):
     som('audio/frase_pergunta_certa.mp3')
@@ -486,14 +495,14 @@ def confirmacao(pergunta, resposta, proxima):
         resp = str(input('QUAL A RESPOSTA CERTA? ')).upper().strip()[0]
         linha()
         som('audio/frase_pergunta.mp3')
-        resp2 = str(input('VOCÊ ESTÁ CERTO DISSO, POSSO PERGUNTAR? [S/N]: ')).upper().strip()[0]
+        resp2 = str(input(f'VOCÊ ESTÁ CERTO DISSO, POSSO PERGUNTAR? {am}[S/N]{br}: ')).upper().strip()[0]
         linha()
         if resp2 == 'S':
             if resp == resposta:
                 som('audio/frase_parabens.mp3')
                 print('CERTA RESPOSTA!')
                 som('audio/frase_acerto.mp3')
-                parar()
+                #parar()
                 proxima()
             else:
                 som('audio/frase_erro.mp3')
@@ -508,16 +517,16 @@ def confirmacao(pergunta, resposta, proxima):
 
 def menu_ajuda(pergunta, resposta, proxima, p):
     som('audio/frase_ajuda1.mp3')
-    print('A) PULAR')
-    print('B) CARTAS')
-    print('C) CONVIDADOS')
-    print('D) COLEGAS')
+    print(f'{rx}A) {br}PULAR')
+    print(f'{rx}B) {br}CARTAS')
+    print(f'{rx}C) {br}CONVIDADOS')
+    print(f'{rx}D) {br}COLEGAS')
     linha()
     som('audio/frase_ajuda2.mp3')
     resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
     linha()
     if resp == 'A':
-        pula(proxima, p)
+        pula(pergunta, resposta, proxima, p)
     elif resp == 'B':
         cartas(pergunta, resposta, proxima)
 
@@ -957,7 +966,7 @@ def cadastro():
     linha()
     while True:
         som('audio/frase_inicio.mp3')
-        resp = str(input('VAMOS JOGAR? [S/N]: ')).upper().strip()[0]
+        resp = str(input(f'VAMOS JOGAR? {am}[S/N]{br}: ')).upper().strip()[0]
         linha()
         if resp == 'S':
             rodada1()
@@ -1004,11 +1013,11 @@ def sair():
     
 def parar():
     linha()
-    resp = str(input('VOCÊ QUER CONTINUAR? [S/N] ')).upper().strip()[0]
+    resp = str(input(f'VOCÊ QUER CONTINUAR? {am}[S/N]{br} ')).upper().strip()[0]
     linha()
     if resp == 'N':
         som('audio/frase_parar.mp3')
-        resp2 = str(input('ESTÁ CERTO DISSO? [S/N]: ')).upper().strip()[0]
+        resp2 = str(input(f'ESTÁ CERTO DISSO? {am}[S/N]{br}: ')).upper().strip()[0]
         linha()
         if resp2 == 'S':
             sair()
@@ -1030,7 +1039,7 @@ def layout():
     placar()
 
 def placar():
-    print(f'| {am}{" AJUDAS DO JOGO >>> "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} |'
+    print(f'| {am}{" AJUDAS DO JOGO >>>  "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} |'
           f'{"CONVIDADOS: "} {am}{convidado}{br} | {"COLEGAS: "} {am}{colega}{br} |')
     linha('=')
 
