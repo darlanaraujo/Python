@@ -6,6 +6,10 @@ from random import randint
 import pygame
 
 # ===================== VARIAVEIS GLOBAIS =============================================================================
+# Nome do arquivo para salvar dados do jogo;
+arq = 'jogoshowmilhao.txt'
+nome = 'Nome Jogador'
+
 # Tabela de cores;
 sc = '\033[m'       # 0 = Sem cor
 br = '\033[30m'     # 1 = Branco
@@ -28,6 +32,9 @@ valor = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000
 
 # Definição para a variável de premio que será exibida ao termino da jogada e mostrá-ra o valor ganho pelo jogador.
 premio = 0
+acerto = 0
+errar = 0
+parar = 0
 # ===================== PERGUNTAS DO JOGO =============================================================================
 # Formulário base para as perguntas;
 f'{fvm}>>>  msg   {sc}'
@@ -415,19 +422,20 @@ while len(pular) != len(pulos['pergunta']):
         pular.append(r)
 
 
-# ===================== PERGUNTAS DO JOGO =============================================================================
+# ===================== FUNÇÕES DE AUXILIO DAS PERGUNTAS DO JOGO ======================================================
 def perguntas(pergunta, resposta, proxima, p):
+
     pergunta = pergunta
     resposta = resposta
 
     print(pergunta)
     linha()
     som('audio/frase_entendeu.mp3')
-    som('audio/frase_opcoes.mp3')
+    som('audio/frase_respondemos.mp3')
     escolha = str(input(f'VOCÊ VAI RESPONDER OU PEDIR AJUDA? {am}[R/A]{br}: ')).upper().strip()[0]
     linha()
     if escolha == 'R':
-        confirmacao(pergunta, resposta, proxima)
+        confirmacao(pergunta, resposta, proxima, premio)
     elif escolha == 'A':
         menu_ajuda(pergunta, resposta, proxima, p)
     else:
@@ -446,13 +454,79 @@ def pula(pergunta, resposta, proxima, p):
     
         print(pergunta)
         linha()
-        confirmacao(pergunta, resposta, proxima)
+        confirmacao(pergunta, resposta, proxima, premio)
     else:
         erro('Você já pulou 3 vezes. Você não tem mais essa opção!')
         menu_ajuda(pergunta, resposta, proxima, p)
 
 
-def cartas(pergunta, resposta, proxima):
+def colegas(pergunta, resposta, proxima, p):
+    global colega
+
+    if colega > 0:
+        colega -= 1
+        pergunta = pergunta
+        resposta = resposta
+
+        opcoes = ['A', 'B', 'C', 'D']
+        lista = []
+        for p, v in enumerate(opcoes):
+            if resposta != v:
+                lista.append(v)
+
+        som('audio/frase_dificil_ajuda.mp3')
+        som('audio/frase_colegas.mp3')
+        print('A escolha dos nossos colegas são: Opção ', end='')
+        for p, v in enumerate(lista):
+            print(f'- {vm}{v}{br} {p +1}0%', end=' ')
+            sleep(1)
+        print(f'- {am}{resposta}{br} 40%')
+
+        sleep(1)
+        linha()
+        confirmacao(pergunta, resposta, proxima, premio)
+
+    else:
+        erro('Você já usou essa opção de ajuda!')
+        menu_ajuda(pergunta, resposta, proxima, p)
+
+
+def convidados(pergunta, resposta, proxima, p):
+    global convidado
+
+    if convidado > 0:
+        convidado -= 1
+        pergunta = pergunta
+        resposta = resposta
+
+        opcoes = ['A', 'B', 'C', 'D']
+        lista = []
+        for p, v in enumerate(opcoes):
+            if resposta != v:
+                lista.append(v)
+
+        som('audio/frase_dificil_ajuda.mp3')
+        som('audio/frase_convidados.mp3')
+        print('Escolha dos convidados: ', end='')
+
+        for c in range(1, 4):
+            print(f'{c}ª convidado: ', end='')
+            if c < 3:
+                print(f'{am}{resposta}{br} |', end=' ')
+                sleep(1)
+            else:
+                print(f'{vm}{lista[0]}{br}')
+
+        sleep(1)
+        linha()
+        confirmacao(pergunta, resposta, proxima, premio)
+
+    else:
+        erro('Você já usou essa opção de ajuda!')
+        menu_ajuda(pergunta, resposta, proxima, p)
+
+
+def cartas(pergunta, resposta, proxima, p):
     global carta
     
     if carta > 0:
@@ -483,16 +557,16 @@ def cartas(pergunta, resposta, proxima):
     
         sleep(1)
         linha()
-        confirmacao(pergunta, resposta, proxima)
+        confirmacao(pergunta, resposta, proxima, premio)
     else:
         erro('Você já usou essa opção de ajuda!')
         menu_ajuda(pergunta, resposta, proxima, p)
         
 
-def confirmacao(pergunta, resposta, proxima):
+def confirmacao(pergunta, resposta, proxima, premio):
     som('audio/frase_pergunta_certa.mp3')
     while True:
-        resp = str(input('QUAL A RESPOSTA CERTA? ')).upper().strip()[0]
+        resp = str(input(f'{am}QUAL A RESPOSTA CERTA?{br} ')).upper().strip()[0]
         linha()
         som('audio/frase_pergunta.mp3')
         resp2 = str(input(f'VOCÊ ESTÁ CERTO DISSO, POSSO PERGUNTAR? {am}[S/N]{br}: ')).upper().strip()[0]
@@ -500,14 +574,20 @@ def confirmacao(pergunta, resposta, proxima):
         if resp2 == 'S':
             if resp == resposta:
                 som('audio/frase_parabens.mp3')
-                print('CERTA RESPOSTA!')
+                print(f'{am}CERTA RESPOSTA!{br}')
                 som('audio/frase_acerto.mp3')
-                #parar()
+
+                stop(arq, nome, premio)
+                if pulo == 3 and carta == 1 and convidado == 1 and colega == 1:
+                    som('audio/frase2.mp3')
+                    som('audio/frase1.mp3')
+
                 proxima()
             else:
                 som('audio/frase_erro.mp3')
-                print('QUE PENA, VOCÊ ERROU!')
-                sair()
+                print(f'{vm}QUE PENA, VOCÊ ERROU!{br}')
+                premio = errar
+                final(arq, nome, premio)
                 break
         elif resp2 == 'N':
             continue
@@ -522,15 +602,21 @@ def menu_ajuda(pergunta, resposta, proxima, p):
     print(f'{rx}C) {br}CONVIDADOS')
     print(f'{rx}D) {br}COLEGAS')
     linha()
+    som('audio/frase_opcoes.mp3')
     som('audio/frase_ajuda2.mp3')
     resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
     linha()
     if resp == 'A':
         pula(pergunta, resposta, proxima, p)
     elif resp == 'B':
-        cartas(pergunta, resposta, proxima)
+        cartas(pergunta, resposta, proxima, p)
+    elif resp == 'C':
+        convidados(pergunta, resposta, proxima, p)
+    elif resp == 'D':
+        colegas(pergunta, resposta, proxima, p)
 
 
+# ===================== PERGUNTAS DO JOGO =============================================================================
 def rodada1():
     """
     P: é a definição para o indice que será usado caso o usuário use a ajuda do pulo. Ele define qual a pergunta que
@@ -548,6 +634,8 @@ def rodada1():
         rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
         recurso da ajuda pular.
     """
+    global premio, acerto, errar, parar
+    acerto = valor[0]
     p = 0
     pergunta = nivel1['pergunta'][sorteio[0]]
     resposta = nivel1['resposta'][sorteio[0]]
@@ -574,6 +662,9 @@ def rodada2():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[1]
+    parar = valor[0]
     p = 1
     pergunta = nivel1['pergunta'][sorteio[1]]
     resposta = nivel1['resposta'][sorteio[1]]
@@ -600,6 +691,10 @@ def rodada3():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[2]
+    parar = valor[1]
+    errar = valor[0]
     p = 2
     pergunta = nivel1['pergunta'][sorteio[2]]
     resposta = nivel1['resposta'][sorteio[2]]
@@ -626,6 +721,10 @@ def rodada4():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[3]
+    parar = valor[2]
+    errar = valor[1]
     p = 3
     pergunta = nivel1['pergunta'][sorteio[3]]
     resposta = nivel1['resposta'][sorteio[3]]
@@ -652,6 +751,10 @@ def rodada5():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[4]
+    parar = valor[3]
+    errar = valor[2]
     p = 4
     pergunta = nivel1['pergunta'][sorteio[4]]
     resposta = nivel1['resposta'][sorteio[4]]
@@ -678,6 +781,10 @@ def rodada6():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[5]
+    parar = valor[4]
+    errar = valor[3]
     p = 5
     pergunta = nivel2['pergunta'][sorteio[0]]
     resposta = nivel2['resposta'][sorteio[0]]
@@ -704,6 +811,10 @@ def rodada7():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[6]
+    parar = valor[5]
+    errar = valor[4]
     p = 6
     pergunta = nivel2['pergunta'][sorteio[1]]
     resposta = nivel2['resposta'][sorteio[1]]
@@ -730,6 +841,10 @@ def rodada8():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[7]
+    parar = valor[6]
+    errar = valor[5]
     p = 7
     pergunta = nivel2['pergunta'][sorteio[2]]
     resposta = nivel2['resposta'][sorteio[2]]
@@ -756,6 +871,10 @@ def rodada9():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[8]
+    parar = valor[7]
+    errar = valor[6]
     p = 8
     pergunta = nivel2['pergunta'][sorteio[3]]
     resposta = nivel2['resposta'][sorteio[3]]
@@ -782,6 +901,10 @@ def rodada10():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[9]
+    parar = valor[8]
+    errar = valor[7]
     p = 9
     pergunta = nivel2['pergunta'][sorteio[4]]
     resposta = nivel2['resposta'][sorteio[4]]
@@ -808,6 +931,10 @@ def rodada11():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[10]
+    parar = valor[9]
+    errar = valor[8]
     p = 10
     pergunta = nivel3['pergunta'][sorteio[0]]
     resposta = nivel3['resposta'][sorteio[0]]
@@ -834,6 +961,10 @@ def rodada12():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[11]
+    parar = valor[10]
+    errar = valor[9]
     p = 11
     pergunta = nivel3['pergunta'][sorteio[1]]
     resposta = nivel3['resposta'][sorteio[1]]
@@ -860,6 +991,10 @@ def rodada13():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[12]
+    parar = valor[11]
+    errar = valor[10]
     p = 12
     pergunta = nivel3['pergunta'][sorteio[2]]
     resposta = nivel3['resposta'][sorteio[2]]
@@ -886,6 +1021,10 @@ def rodada14():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[13]
+    parar = valor[12]
+    errar = valor[11]
     p = 13
     pergunta = nivel3['pergunta'][sorteio[3]]
     resposta = nivel3['resposta'][sorteio[3]]
@@ -912,6 +1051,10 @@ def rodada15():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[14]
+    parar = valor[13]
+    errar = valor[12]
     p = 14
     pergunta = nivel3['pergunta'][sorteio[4]]
     resposta = nivel3['resposta'][sorteio[4]]
@@ -938,6 +1081,10 @@ def rodada16():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
+    global premio, acerto, errar, parar
+    acerto = valor[15]
+    parar = valor[14]
+    errar = 0
     p = 15
     pergunta = nivel4['pergunta'][sorteio[0]]
     resposta = nivel4['resposta'][sorteio[0]]
@@ -949,6 +1096,10 @@ def rodada16():
 
 # ===================== FUNÇÕES DO JOGO ===============================================================================
 def inicio():
+    # Função para definir o nome do arquivo aonde os dados dos jogadores ficarão salvos.
+    if not arquivoexiste(arq):
+        criararquivo(arq)
+
     pygame.mixer.init()
     pygame.mixer.music.load('audio/abertura.mp3')
     pygame.mixer.music.play()
@@ -958,6 +1109,7 @@ def inicio():
 
 
 def cadastro():
+    global nome
     som('audio/frase_participante.mp3')
     cabecalho('CADASTRO DO JOGADOR')
     nome = str(input('Nome do jogador: ')).title().strip()
@@ -966,7 +1118,7 @@ def cadastro():
     linha()
     while True:
         som('audio/frase_inicio.mp3')
-        resp = str(input(f'VAMOS JOGAR? {am}[S/N]{br}: ')).upper().strip()[0]
+        resp = str(input('VAMOS JOGAR? [S/N]: ')).upper().strip()[0]
         linha()
         if resp == 'S':
             rodada1()
@@ -989,8 +1141,10 @@ def menu():
         if resp == 'A':
             cadastro()
         elif resp == 'B':
+            som('audio/frase_lombardi.mp3')
             print('Placar do jogo') #placar(arq)
         elif resp == 'C':
+            som('audio/frase_lombardi.mp3')
             print('Regras do jogo') #regras()
         elif resp == 'D':
             sair()
@@ -1011,7 +1165,7 @@ def sair():
     print('Até a próxima!')
     
     
-def parar():
+def stop(arq, nome, premio):
     linha()
     resp = str(input(f'VOCÊ QUER CONTINUAR? {am}[S/N]{br} ')).upper().strip()[0]
     linha()
@@ -1020,10 +1174,26 @@ def parar():
         resp2 = str(input(f'ESTÁ CERTO DISSO? {am}[S/N]{br}: ')).upper().strip()[0]
         linha()
         if resp2 == 'S':
-            sair()
+            premio = parar
+            final(arq, nome, premio)
 
-def final():
-    print('Final do jogo')
+
+def final(arq, nome, premio):
+    try:
+        a = open(arq, 'at')
+    except:
+        print('Houve um ERRO na abertura do arquivo!')
+    else:
+        cabecalho('RESULTADO DA PARTIDA')
+        print(f'Parabéns {nome}, você fez uma ótima partida. Seu premio é {premio}')
+        try:
+            a.write(f'{nome};{premio}\n')
+        except:
+            print(f'ERRO ao cadastrar o jogador {nome}')
+        else:
+            print(f'Novo registro de {nome} adicionado.')
+            a.close()
+    sair()
     
     
 # ===================== FUNÇÕES DO SISTEMA ============================================================================
@@ -1039,8 +1209,11 @@ def layout():
     placar()
 
 def placar():
-    print(f'| {am}{" AJUDAS DO JOGO >>>  "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} |'
-          f'{"CONVIDADOS: "} {am}{convidado}{br} | {"COLEGAS: "} {am}{colega}{br} |')
+    print(f'| {am}{" AJUDAS DO JOGO >>> "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} |'
+          f' {"CONVIDADOS: "} {am}{convidado}{br} | {"COLEGAS: "} {am}{colega}{br} |')
+    linha('=')
+    print(f'| {am}{"PLACAR >>>"}{br} | {"ERRAR:"} {vm}{errar:<11.2f}{br} |'
+          f' {"PARAR:"} {rx}{parar:<12.2f}{br} | {"ACERTO:"} {am}{acerto:<12.2f}{br} |')
     linha('=')
 
 
@@ -1070,6 +1243,41 @@ def erro(msg):
 
 def moeda(premio, moeda='R$ '):
     return f'{moeda}{premio:.2f}'.replace('.', ',')
+
+
+def tempo():
+    temp = 'on'
+    print('TEMPO: ', end='')
+    for c in range(1, 31):
+        print(f'{c}', end=' ')
+        sleep(1)
+    temp = 'off'
+
+    if temp == 'off':
+        som('audio/frase_acabou_tempo.mp3')
+        print('Que pena seu tempo acabou')
+        final(arq, nome, premio)
+
+# ===================== CRIAÇÃO DO ARQUIVO PARA SALVAR DADOS ==========================================================
+def criararquivo(arq):
+    # Função que cria o arquivo (banco de dados) caso não exista.
+    try:
+        a = open(arq, 'wt+')
+        a.close()
+    except:
+        print(f'Houve um erro na criação do arquivo {arq}')
+    else:
+        print(f'Arquivo {arq} criado com sucesso!')
+
+
+def arquivoexiste(arq):
+    # Função que verifica se o arquivo (banco de dados) existe.
+    try:
+        a = open(arq, 'rt')
+    except FileNotFoundError:
+        return False
+    else:
+        return True
 
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
