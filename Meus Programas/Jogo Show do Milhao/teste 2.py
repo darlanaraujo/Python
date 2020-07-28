@@ -58,3 +58,28 @@ def teste():
 
 teste()
 placar()'''
+
+'''import os
+clear = lambda: os.system('cls')
+
+nome = str(input('Qual seu nome: '))
+clear()
+print(f'Olá {nome}, seja bem vindo!')
+str(input('Presione enter para sair.'))'''
+
+import time, sys
+
+def tempo():
+    for i in range(0, 31):
+        sys.stdout.write(f"\r{i}")
+        sys.stdout.flush()
+        time.sleep(1)
+    print ("\nQue pena, seu tempo acabou")
+
+
+def limpa(msg):
+    sys.stdout.write(f"\r{msg}")
+    sys.stdout.flush()
+
+nome = str(input('Qual o seu nome: '))
+limpa(f'Olá {nome}, seja bem vindo.')
