@@ -1,7 +1,7 @@
 # ===================== IMPORTAÇÕES ===================================================================================
 from time import sleep
 from random import randint
-
+import os, sys
 import pygame
 
 # ===================== VARIAVEIS GLOBAIS =============================================================================
@@ -21,6 +21,9 @@ pulo = 3
 carta = 1
 convidado = 1
 colega = 1
+
+#limpa = os.system('cls' if os.name == 'nt' else 'clear')
+limpa = lambda: os.system("cls")
 # ===================== PERGUNTAS DO JOGO =============================================================================
 
 # Formulário base para as perguntas;
@@ -409,6 +412,7 @@ def cabecalho(msg):
     linha('=')
     print(f'|{am}{msg.center(78)}{br}|')
     linha('=')
+    limpa()
 
 
 def som(audio):
@@ -429,9 +433,10 @@ def erro(msg):
 
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
-#inicio()
+inicio()
 
-resposta = nivel1['resposta'][sorteio[0]]
+
+'''resposta = nivel1['resposta'][sorteio[0]]
 opcoes = ['A', 'B', 'C', 'D']
 excluir = randint(1, 3)
 
@@ -454,7 +459,7 @@ for p, v in enumerate(opcoes):
     if resposta != v:
         lista.append(v)
 
-print(lista[-3: -0 +excluir])
+print(lista[-3: -0 +excluir])'''
 
 
 
