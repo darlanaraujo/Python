@@ -451,11 +451,12 @@ print('Desconsidere as opções:', end=' ')
 lista = []
 
 for p, v in enumerate(opcoes):
-    if p + 1 != excluir:
-        if resposta != v:
-            lista.append(v)
+    if resposta != v:
+        lista.append(v)
 
-print(lista)
+print(lista[-3: -0 +excluir])
+
+
 
 '''for p, v in enumerate(opcoes):
     if resposta != v:
