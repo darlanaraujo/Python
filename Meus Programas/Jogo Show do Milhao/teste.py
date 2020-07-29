@@ -433,7 +433,7 @@ def erro(msg):
 
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
-inicio()
+#inicio()
 
 
 '''resposta = nivel1['resposta'][sorteio[0]]
@@ -472,3 +472,10 @@ print(lista[-3: -0 +excluir])'''
 '''for p, v in enumerate(opcoes):
     for c in range(1):
         print(f'Volta número {p}')'''
+
+valor = '1000,00'
+
+if len(valor) > 6:
+    print('encontrei')
+    valor.replace('.', '0')
+print(valor)
