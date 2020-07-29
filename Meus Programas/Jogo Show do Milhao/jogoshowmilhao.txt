@@ -1,6 +1,0 @@
-Darlan;0
-Darlan;2000
-Darlan;0
-Jogador;0
-Davi;2000
-Davi;4000
