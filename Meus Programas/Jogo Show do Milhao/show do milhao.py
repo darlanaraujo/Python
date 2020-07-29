@@ -431,15 +431,16 @@ def perguntas(pergunta, resposta, proxima, p):
     print(pergunta)
     linha()
     som('audio/frase_entendeu.mp3')
-    som('audio/frase_respondemos.mp3')
-    escolha = str(input(f'VOCÊ VAI RESPONDER OU PEDIR AJUDA? {am}[R/A]{br}: ')).upper().strip()[0]
-    linha()
-    if escolha == 'R':
-        confirmacao(pergunta, resposta, proxima, premio)
-    elif escolha == 'A':
-        menu_ajuda(pergunta, resposta, proxima, p)
-    else:
-        erro(f'ERRO! Dados inválidos, digite apenas {am}R{br} ou {am}A{br}.')
+    while True:
+        som('audio/frase_respondemos.mp3')
+        escolha = str(input(f'VOCÊ VAI RESPONDER OU PEDIR AJUDA? {am}[R/A]{br}: ')).upper().strip()[0]
+        linha()
+        if escolha == 'R':
+            confirmacao(pergunta, resposta, proxima, premio)
+        elif escolha == 'A':
+            menu_ajuda(pergunta, resposta, proxima, p)
+        else:
+            erro(f'ERRO! Dados inválidos, digite apenas {am}R{br} ou {am}A{br}.')
 
 
 def pula(pergunta, resposta, proxima, p):
@@ -564,35 +565,40 @@ def cartas(pergunta, resposta, proxima, p):
         
 
 def confirmacao(pergunta, resposta, proxima, premio):
-    som('audio/frase_pergunta_certa.mp3')
     while True:
+        som('audio/frase_pergunta_certa.mp3')
         resp = str(input(f'{am}QUAL A RESPOSTA CERTA?{br} ')).upper().strip()[0]
-        linha()
-        som('audio/frase_pergunta.mp3')
-        resp2 = str(input(f'VOCÊ ESTÁ CERTO DISSO, POSSO PERGUNTAR? {am}[S/N]{br}: ')).upper().strip()[0]
-        linha()
-        if resp2 == 'S':
-            if resp == resposta:
-                som('audio/frase_parabens.mp3')
-                print(f'{am}CERTA RESPOSTA!{br}')
-                som('audio/frase_acerto.mp3')
-
-                stop(arq, nome, premio)
-                if pulo == 3 and carta == 1 and convidado == 1 and colega == 1:
-                    som('audio/frase2.mp3')
-                    som('audio/frase1.mp3')
-
-                proxima()
-            else:
-                som('audio/frase_erro.mp3')
-                print(f'{vm}QUE PENA, VOCÊ ERROU!{br}')
-                premio = errar
-                final(arq, nome, premio)
-                break
-        elif resp2 == 'N':
-            continue
+        if resp in 'ABCD':
+            linha()
+            
+            while True:
+                som('audio/frase_pergunta.mp3')
+                resp2 = str(input(f'VOCÊ ESTÁ CERTO DISSO, POSSO PERGUNTAR? {am}[S/N]{br}: ')).upper().strip()[0]
+                linha()
+                if resp2 == 'S':
+                    if resp == resposta:
+                        som('audio/frase_parabens.mp3')
+                        print(f'{am}CERTA RESPOSTA!{br}')
+                        som('audio/frase_acerto.mp3')
+        
+                        stop(arq, nome, premio)
+                        if pulo == 3 and carta == 1 and convidado == 1 and colega == 1:
+                            som('audio/frase2.mp3')
+                            som('audio/frase1.mp3')
+                        proxima()
+                    else:
+                        som('audio/frase_erro.mp3')
+                        print(f'{vm}QUE PENA, VOCÊ ERROU!{br}')
+                        premio = errar
+                        final(arq, nome, premio)
+                        break
+                elif resp2 == 'N':
+                    continue
+                else:
+                    erro(f'ERRO! dados inválidos, digite apenas {am}S{br} ou {am}N{br}.')
+                
         else:
-            erro(f'ERRO! dados inválidos, digite apenas {am}S{br} ou {am}N{br}.')
+            erro(f'ERRO! Dados inválidos, digite apenas as opções {am}A B C D{br}')
 
 
 def menu_ajuda(pergunta, resposta, proxima, p):
@@ -604,16 +610,19 @@ def menu_ajuda(pergunta, resposta, proxima, p):
     linha()
     som('audio/frase_opcoes.mp3')
     som('audio/frase_ajuda2.mp3')
-    resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
-    linha()
-    if resp == 'A':
-        pula(pergunta, resposta, proxima, p)
-    elif resp == 'B':
-        cartas(pergunta, resposta, proxima, p)
-    elif resp == 'C':
-        convidados(pergunta, resposta, proxima, p)
-    elif resp == 'D':
-        colegas(pergunta, resposta, proxima, p)
+    while True:
+        resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
+        linha()
+        if resp == 'A':
+            pula(pergunta, resposta, proxima, p)
+        elif resp == 'B':
+            cartas(pergunta, resposta, proxima, p)
+        elif resp == 'C':
+            convidados(pergunta, resposta, proxima, p)
+        elif resp == 'D':
+            colegas(pergunta, resposta, proxima, p)
+        else:
+            erro('ERRO! Dados inválidos, digite apenas as opções do menu.')
 
 
 # ===================== PERGUNTAS DO JOGO =============================================================================
@@ -1125,9 +1134,8 @@ def cadastro():
         elif resp == 'N':
             cabecalho('MENU DO JOGO')
             menu()
-            break
         else:
-            erro('ERRO! Dados inválidos. Digite corretamente!')
+            erro(f'ERRO! Dados inválidos. Digite apenas {am}S{br} ou {am}N{br}.')
 
 
 def menu():
@@ -1142,7 +1150,7 @@ def menu():
             cadastro()
         elif resp == 'B':
             som('audio/frase_lombardi.mp3')
-            print('Placar do jogo') #placar(arq)
+            ranking(arq)
         elif resp == 'C':
             som('audio/frase_lombardi.mp3')
             print('Regras do jogo') #regras()
@@ -1150,32 +1158,40 @@ def menu():
             sair()
             break
         else:
-            erro('ERRO! Dados inválidos!')
+            erro('ERRO! Dados inválidos, digite as opções do menu!')
 
 
 def sair():
     som('audio/frase_tchau.mp3')
+    pygame.mixer.init()
+    pygame.mixer.music.load('audio/abertura_continuacao.mp3')
+    pygame.mixer.music.play()
     linha()
     print('Saindo do jogo', end='')
     sleep(.5)
-    for c in range(1, 6):
+    for c in range(1, 48):
         print('.', end='')
         sleep(.5)
-    sleep(.5)
-    print('Até a próxima!')
+    #sleep(1)
+    print(f'.....{am}Até a próxima!')
     
     
 def stop(arq, nome, premio):
     linha()
-    resp = str(input(f'VOCÊ QUER CONTINUAR? {am}[S/N]{br} ')).upper().strip()[0]
-    linha()
-    if resp == 'N':
-        som('audio/frase_parar.mp3')
-        resp2 = str(input(f'ESTÁ CERTO DISSO? {am}[S/N]{br}: ')).upper().strip()[0]
+    while True:
+        resp = str(input(f'VOCÊ QUER CONTINUAR? {am}[S/N]{br} ')).upper().strip()[0]
         linha()
-        if resp2 == 'S':
-            premio = parar
-            final(arq, nome, premio)
+        if resp == 'N':
+            som('audio/frase_parar.mp3')
+            resp2 = str(input(f'ESTÁ CERTO DISSO? {am}[S/N]{br}: ')).upper().strip()[0]
+            linha()
+            if resp2 == 'S':
+                premio = parar
+                final(arq, nome, premio)
+        elif resp == 'S':
+            break
+        else:
+            erro(f'ERRO! Dados inválidos, digite apenas {am}S{br} ou {am}N{br}!')
 
 
 def final(arq, nome, premio):
@@ -1185,28 +1201,53 @@ def final(arq, nome, premio):
         print('Houve um ERRO na abertura do arquivo!')
     else:
         cabecalho('RESULTADO DA PARTIDA')
-        print(f'Parabéns {nome}, você fez uma ótima partida. Seu premio é {premio}')
+        print(f'| {am}{"JOGADOR":^37}{br} | {am}{"PREMIAÇÃO":^36}{br} |')
+        linha()
+        print(f'| {nome:^37} | {moeda(premio):^36} |')
+        linha()
         try:
-            a.write(f'{nome};{premio}\n')
+            a.write(f'{nome};{moeda(premio)}\n')
         except:
             print(f'ERRO ao cadastrar o jogador {nome}')
         else:
-            print(f'Novo registro de {nome} adicionado.')
+            #print(f'Novo registro de {nome} adicionado.')
             a.close()
-    sair()
+            sair()
     
-    
+
+def ranking(arq):
+    pygame.mixer.init()
+    pygame.mixer.music.load('audio/abertura_continuacao.mp3')
+    pygame.mixer.music.play()
+    try:
+        a = open(arq, 'rt')
+    except:
+        print(f'Houve um ERRO na abertura do aquivo!')
+    else:
+        cabecalho('HANKING DOS JOGADORES')
+        print(f'| {am}{"JOGADOR":^37}{br} | {am}{"PREMIAÇÃO":^36}{br} |')
+        linha()
+        for dados in a:
+            dado = dados.split(';')
+            dado[1] = dado[1].replace('\n', '')
+            print(f'| {dado[0]:^37} | {dado[1]:^36} |')
+            linha()
+            sleep(.5)
+    finally:
+        a.close()
+        menu()
+        
 # ===================== FUNÇÕES DO SISTEMA ============================================================================
 def layout():
     print(br)
     linha('=')
     print(f'|{am+"JOGO SHOW DO MILHÃO - V1.0".center(78)+br}|')
     linha('=')
-    print(f'|{am+"BEM VINDO AO JOGO SHOW DO MILHÃO!".center(78)+br}|')
+    print(f'|      {am}{"BEM VINDO AO"} {br}{"JOGO SHOW DO MILHÃO"} {am}{" - DESENVOLVIDO POR "} {br}{"DARLAN ARAUJO"}     |')
     linha('=')
-    print(f'|{az}{"Acerte as perguntas e concorra ao premio de R$ 1.000,000,00 de reais".center(78)}{br}|')
+    print(f'|     {az}{"Acerte as perguntas e concorra ao premio de"} {vm}{"R$ 1.000,000,00"} {az}{"de reais"}{br}     |')
     linha('=')
-    placar()
+    
 
 def placar():
     print(f'| {am}{" AJUDAS DO JOGO >>> "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} |'
@@ -1282,6 +1323,5 @@ def arquivoexiste(arq):
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
 inicio()
-#pula(nivel1)
 
 
