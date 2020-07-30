@@ -27,6 +27,9 @@ carta = 1
 convidado = 1
 colega = 1
 
+# Definição da posição do jogador na partida;
+global p
+
 # Definição dos valores para cada rodada;
 valor = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
 
@@ -37,6 +40,7 @@ errar = 0
 parar = 0
 # ===================== PERGUNTAS DO JOGO =============================================================================
 # Formulário base para as perguntas;
+# Pergunta 0
 f'{fvm}>>>  msg   {sc}'
 f'\n{am}A) {br}msg'
 f'\n{am}B) {br}msg'
@@ -104,8 +108,68 @@ nivel1 = {'pergunta': [
     f'\n{am}B) {br}12 DE OUTUBRO'
     f'\n{am}C) {br}7 DE SETEMBRO'
     f'\n{am}D) {br}25 DE DEZEMBRO',
+    # Pergunta 10
+    f'{fvm}>>>  Segundo a crença popular, a mula-sem-cabeça é mulher de quem?   {sc}'
+    f'\n{am}A) {br}DO COROINHA'
+    f'\n{am}B) {br}DO PADRE'
+    f'\n{am}C) {br}DO SACRISTÃO'
+    f'\n{am}D) {br}DO BISPO',
+    # Pergunta 11
+    f'{fvm}>>>  Como é chamada a doença que causa perda desigual da melanina?   {sc}'
+    f'\n{am}A) {br}ASTIGMATISMO'
+    f'\n{am}B) {br}TENDINITE'
+    f'\n{am}C) {br}VITILIGO'
+    f'\n{am}D) {br}VITINGA',
+    # Pergunta 12
+    f'{fvm}>>>  Quem realizou a primeira cirurgia de ponte de safena no Brasil?   {sc}'
+    f'\n{am}A) {br}DR. ZERBINI'
+    f'\n{am}B) {br}DR. FRITZ'
+    f'\n{am}C) {br}DR. JATENE'
+    f'\n{am}D) {br}DR. GALLIGARI',
+    # Pergunta 13
+    f'{fvm}>>>  Qual é a moeda oficial da Alemanha?   {sc}'
+    f'\n{am}A) {br}LIRA'
+    f'\n{am}B) {br}MARCO'
+    f'\n{am}C) {br}FRANCO'
+    f'\n{am}D) {br}LIBRA',
+    # Pergunta 14
+    f'{fvm}>>>  Quem foi o assassino de Lee Harvey Oswald?   {sc}'
+    f'\n{am}A) {br}JACK RUBY'
+    f'\n{am}B) {br}JOHN WILKES BOOTH'
+    f'\n{am}C) {br}PAT GARRET'
+    f'\n{am}D) {br}CHARLOTTE CORDAY',
+    # Pergunta 15
+    f'{fvm}>>>  Nas histórias do Snoopy, qual é o nome do passarinho?   {sc}'
+    f'\n{am}A) {br}PIU-PIU'
+    f'\n{am}B) {br}WOODSTOCK'
+    f'\n{am}C) {br}CANARINHO'
+    f'\n{am}D) {br}ROUXINOL',
+    # Pergunta 16
+    f'{fvm}>>>  Que metal avermelhado cria uma camada esverdeada em contato com a umidade?   {sc}'
+    f'\n{am}A) {br}FERRO'
+    f'\n{am}B) {br}COBRE'
+    f'\n{am}C) {br}MERCÚRIO'
+    f'\n{am}D) {br}AÇO',
+    # Pergunta 17
+    f'{fvm}>>>  Que humorista, falecido em 1999, foi baterista de Raul Seixas?   {sc}'
+    f'\n{am}A) {br}LILICO'
+    f'\n{am}B) {br}RONI CÓCEGAS'
+    f'\n{am}C) {br}GRANDE OTELO'
+    f'\n{am}D) {br}MAZZAROPI',
+    # Pergunta 18
+    f'{fvm}>>>  O que os filatelistas colecionam?   {sc}'
+    f'\n{am}A) {br}QUADROS'
+    f'\n{am}B) {br}MOEDAS'
+    f'\n{am}C) {br}SELOS'
+    f'\n{am}D) {br}FIGURINHAS',
+    # Pergunta 19
+    f'{fvm}>>>  Quando começou e terminou a Primeira Guerra Mundial?   {sc}'
+    f'\n{am}A) {br}1914 - 1919'
+    f'\n{am}B) {br}1039 - 1945'
+    f'\n{am}C) {br}1921 - 1932'
+    f'\n{am}D) {br}1912 - 1915',
 ],
-    'resposta':['B', 'B', 'C', 'B', 'B', 'D', 'C', 'C', 'B', 'C',]
+    'resposta':['B', 'B', 'C', 'B', 'B', 'D', 'C', 'C', 'B', 'C', 'B', 'C', 'C', 'B', 'A', 'B', 'B', 'B', 'C', 'A']
 }
 
 nivel2 = {'pergunta': [
@@ -168,139 +232,230 @@ nivel2 = {'pergunta': [
     f'\n{am}A) {br}57 ANOS'
     f'\n{am}B) {br}67 ANOS'
     f'\n{am}C) {br}76 ANOS'
-    f'\n{am}D) {br}79 ANOS'
+    f'\n{am}D) {br}79 ANOS',
+    # Pergunta 10
+    f'{fvm}>>>  O que são meninges?   {sc}'
+    f'\n{am}A) {br}CÉLULAS'
+    f'\n{am}B) {br}NERVOS'
+    f'\n{am}C) {br}MEMBRANAS'
+    f'\n{am}D) {br}MÚSCULOS',
+    # Pergunta 11
+    f'{fvm}>>>  Como é chamada a bola de gelo e poeira que orbita em torno do sol?   {sc}'
+    f'\n{am}A) {br}COMETA'
+    f'\n{am}B) {br}METEORITO'
+    f'\n{am}C) {br}CAMADA DE OZÔNIO'
+    f'\n{am}D) {br}ESTRELA DALVA',
+    # Pergunta 12
+    f'{fvm}>>>  Qual a ciência que estuda a distribuição dos animais?   {sc}'
+    f'\n{am}A) {br}ZOOTERAPIA'
+    f'\n{am}B) {br}ZOOGEOGRAFIA'
+    f'\n{am}C) {br}ZODÍACO'
+    f'\n{am}D) {br}ZOOMETRIA',
+    # Pergunta 13
+    f'{fvm}>>>  A Bélgica é:   {sc}'
+    f'\n{am}A) {br}UMA REPÚBLICA'
+    f'\n{am}B) {br}UMA MONARQUIA CONSTITUCIONAL'
+    f'\n{am}C) {br}UM EMIRADO'
+    f'\n{am}D) {br}UM PRINCIPADO',
+    # Pergunta 14
+    f'{fvm}>>>  Que parte do corpo humano é infectada pela cólera?   {sc}'
+    f'\n{am}A) {br}GARGANTA'
+    f'\n{am}B) {br}INTESTINO'
+    f'\n{am}C) {br}PULMÔES'
+    f'\n{am}D) {br}RINS',
+    # Pergunta 15
+    f'{fvm}>>>  A união do espermatozóide com o óvulo origina uma célula chamada:   {sc}'
+    f'\n{am}A) {br}ZIGOTO'
+    f'\n{am}B) {br}BIGOTO'
+    f'\n{am}C) {br}FETO'
+    f'\n{am}D) {br}GAROTO',
+    # Pergunta 16
+    f'{fvm}>>>  A que país pertence a ilha de Terra Nova?   {sc}'
+    f'\n{am}A) {br}ESTADOS UNIDOS'
+    f'\n{am}B) {br}DINAMARCA'
+    f'\n{am}C) {br}CANADÁ'
+    f'\n{am}D) {br}FRANÇA',
+    # Pergunta 17
+    f'{fvm}>>>  De quem é este verso: “A praça é do povo, como o céu é do condor”?   {sc}'
+    f'\n{am}A) {br}TOBIAS BARRETO'
+    f'\n{am}B) {br}DORIVAL CAIMI'
+    f'\n{am}C) {br}MACHADO DE ASSIS'
+    f'\n{am}D) {br}CASTRO ALVES',
+    # Pergunta 18
+    f'{fvm}>>>  Que nome recebe a foz de um rio que se abre para o mar?   {sc}'
+    f'\n{am}A) {br}ALAGADO'
+    f'\n{am}B) {br}MANGUEZAL'
+    f'\n{am}C) {br}PÂNTANO'
+    f'\n{am}D) {br}ESTUÁRIO',
+    # Pergunta 19
+    f'{fvm}>>>  Em que ano Ayrton Senna venceu o primeiro campeonato de Fórmula 1?   {sc}'
+    f'\n{am}A) {br}1987'
+    f'\n{am}B) {br}1990'
+    f'\n{am}C) {br}1985'
+    f'\n{am}D) {br}1988',
 ],
-    'resposta':['D', 'B', 'D', 'C', 'A', 'C', 'A', 'C', 'C', 'C',]
+    'resposta':['D', 'B', 'D', 'C', 'A', 'C', 'A', 'C', 'C', 'C', 'C', 'A', 'B', 'B', 'B', 'A', 'C', 'D', 'D', 'D',]
 }
 
 nivel3 = {'pergunta': [
     # Pergunta 0
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Quem disse a frase: “Vim, vi e venci”?   {sc}'
+    f'\n{am}A) {br}JÚLIO CÉSAR'
+    f'\n{am}B) {br}CALÍGULA'
+    f'\n{am}C) {br}NERO'
+    f'\n{am}D) {br}MARCO ANTÔNIO',
     # Pergunta 1
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Beirute é a capital de que país?   {sc}'
+    f'\n{am}A) {br}SÍRIA'
+    f'\n{am}B) {br}NEPAL'
+    f'\n{am}C) {br}MONGÓLIA'
+    f'\n{am}D) {br}LÍBANO',
     # Pergunta 2
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que é um contratorpedeiro?   {sc}'
+    f'\n{am}A) {br}TANQUE'
+    f'\n{am}B) {br}NAVIO DE GUERRA'
+    f'\n{am}C) {br}DIRIGÍVEL'
+    f'\n{am}D) {br}AVIÃO DE CAÇA',
     # Pergunta 3
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Em 1991, que esportista americano se afastou do basquete por ser HIV positivo?   {sc}'
+    f'\n{am}A) {br}MICHAEL JORDAN'
+    f'\n{am}B) {br}MAGIC JOHNSON'
+    f'\n{am}C) {br}DENNIS RODMAN'
+    f'\n{am}D) {br}MIKE TYSON',
     # Pergunta 4
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  A que categoria pertence o cavalo-marinho?   {sc}'
+    f'\n{am}A) {br}MOLUSCO'
+    f'\n{am}B) {br}CRUSTÁCEO'
+    f'\n{am}C) {br}PEIXE'
+    f'\n{am}D) {br}MAMÍFERO',
     # Pergunta 5
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Em que cidade foram realizados os jogos olímpicos de 2000?   {sc}'
+    f'\n{am}A) {br}MUNIQUE'
+    f'\n{am}B) {br}SIDNEY'
+    f'\n{am}C) {br}TÓQUIO'
+    f'\n{am}D) {br}ATLANTA',
     # Pergunta 6
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual desses astros de filmes de ação é belga?   {sc}'
+    f'\n{am}A) {br}ARNOLD SCHWARZENEGGER'
+    f'\n{am}B) {br}SYLVESTER STALLONE'
+    f'\n{am}C) {br}STEVEN SEAGAL'
+    f'\n{am}D) {br}JEAN CLAUDE VAN DAMME',
     # Pergunta 7
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual presidente brasileiro instituiu o AI-5?   {sc}'
+    f'\n{am}A) {br}COSTA E SILVA'
+    f'\n{am}B) {br}ERNESTO GEISEL'
+    f'\n{am}C) {br}JOÃO FIGUEIREDO'
+    f'\n{am}D) {br}ITAMAR FRANCO',
     # Pergunta 8
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que significa literalmente Perestroika?   {sc}'
+    f'\n{am}A) {br}CONVERSÃO'
+    f'\n{am}B) {br}INVOLUÇÃO'
+    f'\n{am}C) {br}REESTRUTURAÇÃO'
+    f'\n{am}D) {br}REGRESSÃO',
     # Pergunta 9
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg'
+    f'{fvm}>>>  Qual desses quatro pesos é o mais leve?  {sc}'
+    f'\n{am}A) {br}10 ONÇAS'
+    f'\n{am}B) {br}10 GRAMAS'
+    f'\n{am}C) {br}10 QUILOS'
+    f'\n{am}D) {br}10 LIBRAS',
+    # Pergunta 10
+    f'{fvm}>>>  Qual a origem da palavra folclore?   {sc}'
+    f'\n{am}A) {br}HOLANDESA'
+    f'\n{am}B) {br}INGLESA'
+    f'\n{am}C) {br}FRANCESA'
+    f'\n{am}D) {br}BRASILEIRA',
+    # Pergunta 11
+    f'{fvm}>>>  Quem ganhou a 1a medalha de ouro olímpico para o Brasil?   {sc}'
+    f'\n{am}A) {br}AFRANIO ANTONIO COSTA'
+    f'\n{am}B) {br}GUILHERME PARAENSE'
+    f'\n{am}C) {br}FERNANDO SOLEDADE'
+    f'\n{am}D) {br}SEBASTIÃO WOLF',
+    # Pergunta 12
+    f'{fvm}>>>  Que pintor francês consagrou a mulher taitiana em suas telas?   {sc}'
+    f'\n{am}A) {br}RENOIR'
+    f'\n{am}B) {br}GAUGUIN'
+    f'\n{am}C) {br}CÉZANNE'
+    f'\n{am}D) {br}MONET',
+    # Pergunta 13
+    f'{fvm}>>>  Qual foi a primeira mulher a entrar no “hall da fama” do rock and roll?   {sc}'
+    f'\n{am}A) {br}JANIS JOPLIN'
+    f'\n{am}B) {br}CAROLE KING'
+    f'\n{am}C) {br}ARETHA FRANKLIN'
+    f'\n{am}D) {br}DIANA ROSS',
+    # Pergunta 14
+    f'{fvm}>>>  Nova Caledônia faz parte da:   {sc}'
+    f'\n{am}A) {br}MICRONÉSIA'
+    f'\n{am}B) {br}MELANÉSIA'
+    f'\n{am}C) {br}POLINÉSIA'
+    f'\n{am}D) {br}INDONÉSIA',
 ],
-    'resposta':['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
+    'resposta':['A', 'D', 'B', 'B', 'C', 'B', 'D', 'A', 'C', 'B', 'B', 'B', 'B', 'C', 'B']
 }
 
 nivel4 = {'pergunta': [
     # Pergunta 0
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Que trópico atravessa o Saara?   {sc}'
+    f'\n{am}A) {br}CAPRICÓRNIO'
+    f'\n{am}B) {br}VIRGEM'
+    f'\n{am}C) {br}CÂNCER'
+    f'\n{am}D) {br}LEÃO',
     # Pergunta 1
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  “Guernica” é uma tela de qual pintor?   {sc}'
+    f'\n{am}A) {br}MONET'
+    f'\n{am}B) {br}RENDIR'
+    f'\n{am}C) {br}PICASSO'
+    f'\n{am}D) {br}LEONARDO DA VINCI',
     # Pergunta 2
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Em que ano foi inaugurada a estátua do Cristo Redentor no Rio de Janeiro?   {sc}'
+    f'\n{am}A) {br}1921'
+    f'\n{am}B) {br}1931'
+    f'\n{am}C) {br}1941'
+    f'\n{am}D) {br}1951',
     # Pergunta 3
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  A que país deve-se viajar para subir o Monte Parnaso?   {sc}'
+    f'\n{am}A) {br}ITÁLIA'
+    f'\n{am}B) {br}FRANÇA'
+    f'\n{am}C) {br}GRÉCIA'
+    f'\n{am}D) {br}TURQUIA',
     # Pergunta 4
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual destas palavras é sinônimo de cabal?   {sc}'
+    f'\n{am}A) {br}BAIXO'
+    f'\n{am}B) {br}PERFEITO'
+    f'\n{am}C) {br}ATREVIDO'
+    f'\n{am}D) {br}ENFERMO',
     # Pergunta 5
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual foi a locomotiva a vapor que trafegou na Estrada de Ferro Mauá em 1854?   {sc}'
+    f'\n{am}A) {br}SANTA-FÉ'
+    f'\n{am}B) {br}LOCO-BREQUE'
+    f'\n{am}C) {br}AMERICAN'
+    f'\n{am}D) {br}BARONESA',
     # Pergunta 6
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que é palato?   {sc}'
+    f'\n{am}A) {br}BARRIGA DA PERNA'
+    f'\n{am}B) {br}MENINA DOS OLHOS'
+    f'\n{am}C) {br}LÍNGUA'
+    f'\n{am}D) {br}CÉU DA BOCA',
     # Pergunta 7
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual atleta foi desclassificado por uso de doping nas Olimpíadas de 1988?   {sc}'
+    f'\n{am}A) {br}MIKE POWELL'
+    f'\n{am}B) {br}BEN JOHNSON'
+    f'\n{am}C) {br}CARL LEWIS'
+    f'\n{am}D) {br}LINFORD CHRISTIE',
     # Pergunta 8
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual metal possui o símbolo Hg?   {sc}'
+    f'\n{am}A) {br}FERRO'
+    f'\n{am}B) {br}AÇO'
+    f'\n{am}C) {br}MERCÚRIO'
+    f'\n{am}D) {br}OURO',
     # Pergunta 9
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg'
+    f'{fvm}>>>  Quem foi chamado de Águia de Haia?   {sc}'
+    f'\n{am}A) {br}JORGE AMADO'
+    f'\n{am}B) {br}EÇA DE QUEIROZ'
+    f'\n{am}C) {br}RUI BARBOSA'
+    f'\n{am}D) {br}RAIMUNDO CORRÊA',
+    
 ],
-    'resposta':['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
+    'resposta':['C', 'C', 'B', 'C', 'B', 'D', 'D', 'B', 'C', 'C']
 }
 
 # Foi criado esse dicionário para serem usadas quando o jogador quiser pular no jogo, assim evito a repetição;
@@ -342,77 +497,93 @@ pulos = {'pergunta': [
     f'\n{am}C) {br}TRÊS'
     f'\n{am}D) {br}QUATRO',
     # Pergunta 6
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual é a altura oficial do aro na cesta no basquete?   {sc}'
+    f'\n{am}A) {br}3.05 METROS'
+    f'\n{am}B) {br}2.97 METROS'
+    f'\n{am}C) {br}3.10 METROS'
+    f'\n{am}D) {br}3.00 METROS',
     # Pergunta 7
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Quem foi aluno de Platão e tutor de Alexandre, o Grande?   {sc}'
+    f'\n{am}A) {br}PITÁGORAS'
+    f'\n{am}B) {br}DIDEROT'
+    f'\n{am}C) {br}ARISTÓTELES'
+    f'\n{am}D) {br}GALILEU GALILEI',
     # Pergunta 8
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Onde estão os sepulcros de Michelangelo, Maquiavel e Galileu?   {sc}'
+    f'\n{am}A) {br}MILÃO'
+    f'\n{am}B) {br}FLORENÇA'
+    f'\n{am}C) {br}VENEZA'
+    f'\n{am}D) {br}GÊNOVA',
     # Pergunta 9
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  A que letra do nosso alfabeto corresponde a letra grega tau?   {sc}'
+    f'\n{am}A) {br}LETRA F'
+    f'\n{am}B) {br}LETRA H'
+    f'\n{am}C) {br}LETRA J'
+    f'\n{am}D) {br}LETRA T',
     # Pergunta 10
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Em qual guerra lutou Paul Newman pela marinha americana?   {sc}'
+    f'\n{am}A) {br}PRIMEIRA GUERRA MUNDIAL'
+    f'\n{am}B) {br}GUERRA DO VIETNÃ'
+    f'\n{am}C) {br}GUERRA DA CORÉIA'
+    f'\n{am}D) {br}SEGUNDA GUERRA MUNDIAL',
     # Pergunta 11
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual é o nome dado a um conjunto de sinos?   {sc}'
+    f'\n{am}A) {br}CORRIMÃO'
+    f'\n{am}B) {br}CARRILHÃO'
+    f'\n{am}C) {br}BADALADA'
+    f'\n{am}D) {br}CORSELETE',
     # Pergunta 12
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual foi o último presidente militar do Brasil?   {sc}'
+    f'\n{am}A) {br}FERNANDO COLLOR'
+    f'\n{am}B) {br}JOÃO FIGUEIREDO'
+    f'\n{am}C) {br}TANCREDO NEVES'
+    f'\n{am}D) {br}JOÃO GOULART',
     # Pergunta 13
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O trapézio é um músculo que está situado:   {sc}'
+    f'\n{am}A) {br}NO PESCOÇO'
+    f'\n{am}B) {br}NO OMBRO'
+    f'\n{am}C) {br}NA CABEÇA'
+    f'\n{am}D) {br}NO BRAÇO',
     # Pergunta 14
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Quem escreveu o livro “A sangue frio” em 1966?   {sc}'
+    f'\n{am}A) {br}TRUMAN CAPOTE'
+    f'\n{am}B) {br}HENRY JAMES'
+    f'\n{am}C) {br}JOHN STEINBECK'
+    f'\n{am}D) {br}TONI MORRISON',
     # Pergunta 15
-        f'{fvm}>>>  msg   {sc}'
-        f'\n{am}A) {br}msg'
-        f'\n{am}B) {br}msg'
-        f'\n{am}C) {br}msg'
-        f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Quem escreveu “Ulisses” em 1922?   {sc}'
+    f'\n{am}A) {br}ERNEST HEMINGWAY'
+    f'\n{am}B) {br}MARCEL PROUST'
+    f'\n{am}C) {br}T.S. ELLIOT'
+    f'\n{am}D) {br}JAMES JOYCE',
 ],
     
-    'resposta': ['B', 'B', 'B', 'C', 'A', 'A', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
+    'resposta': ['B', 'B', 'B', 'C', 'A', 'A', 'A', 'C', 'B', 'D', 'D', 'B', 'B', 'B', 'A', 'D']
 }
 
 
 # Essa função faz com que o sorteio não se repita; Lembrando que a ordem do sorteio corresponde a ordem das perguntas;
 sorteio = []
-while len(sorteio) != len(nivel1['pergunta']):
-    r = randint(0, len(nivel1['pergunta']) -1)
-    if r not in sorteio:
-        sorteio.append(r)
+if p < 5:
+    while len(sorteio) != len(nivel1['pergunta']):
+        r = randint(0, len(nivel1['pergunta']) - 1)
+        if r not in sorteio:
+            sorteio.append(r)
+elif p < 10:
+    while len(sorteio) != len(nivel2['pergunta']):
+        r = randint(0, len(nivel2['pergunta']) - 1)
+        if r not in sorteio:
+            sorteio.append(r)
+elif p < 15:
+    while len(sorteio) != len(nivel3['pergunta']):
+        r = randint(0, len(nivel3['pergunta']) - 1)
+        if r not in sorteio:
+            sorteio.append(r)
+elif p == 15:
+    while len(sorteio) != len(nivel4['pergunta']):
+        r = randint(0, len(nivel4['pergunta']) -1)
+        if r not in sorteio:
+            sorteio.append(r)
 
 # O mesmo ocorre para as perguntas da função pular;
 pular = []
@@ -471,15 +642,15 @@ def colegas(pergunta, resposta, proxima, p):
 
         opcoes = ['A', 'B', 'C', 'D']
         lista = []
-        for p, v in enumerate(opcoes):
+        for pos, v in enumerate(opcoes):
             if resposta != v:
                 lista.append(v)
 
         som('audio/frase_dificil_ajuda.mp3')
         som('audio/frase_colegas.mp3')
         print('A escolha dos nossos colegas são: Opção ', end='')
-        for p, v in enumerate(lista):
-            print(f'- {vm}{v}{br} {p +1}0%', end=' ')
+        for pos, v in enumerate(lista):
+            print(f'- {vm}{v}{br} {pos +1}0%', end=' ')
             sleep(1)
         print(f'- {am}{resposta}{br} 40%')
 
@@ -502,7 +673,7 @@ def convidados(pergunta, resposta, proxima, p):
 
         opcoes = ['A', 'B', 'C', 'D']
         lista = []
-        for p, v in enumerate(opcoes):
+        for pos, v in enumerate(opcoes):
             if resposta != v:
                 lista.append(v)
 
@@ -537,7 +708,7 @@ def cartas(pergunta, resposta, proxima, p):
 
         opcoes = ['A', 'B', 'C', 'D']
         lista = []
-        for p, v in enumerate(opcoes):
+        for pos, v in enumerate(opcoes):
             if resposta != v:
                 lista.append(v)
     
@@ -609,8 +780,8 @@ def menu_ajuda(pergunta, resposta, proxima, p):
     print(f'{rx}D) {br}COLEGAS')
     linha()
     som('audio/frase_opcoes.mp3')
-    som('audio/frase_ajuda2.mp3')
     while True:
+        som('audio/frase_ajuda2.mp3')
         resp = str(input('E PARA QUEM VOCÊ VAI PEDIR AJUDA? ')).upper().strip()[0]
         linha()
         if resp == 'A':
@@ -643,7 +814,7 @@ def rodada1():
         rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
         recurso da ajuda pular.
     """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[0]
     p = 0
     pergunta = nivel1['pergunta'][sorteio[0]]
@@ -671,7 +842,7 @@ def rodada2():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[1]
     parar = valor[0]
     p = 1
@@ -700,7 +871,7 @@ def rodada3():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[2]
     parar = valor[1]
     errar = valor[0]
@@ -730,7 +901,7 @@ def rodada4():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[3]
     parar = valor[2]
     errar = valor[1]
@@ -760,7 +931,7 @@ def rodada5():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[4]
     parar = valor[3]
     errar = valor[2]
@@ -790,7 +961,7 @@ def rodada6():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[5]
     parar = valor[4]
     errar = valor[3]
@@ -820,7 +991,7 @@ def rodada7():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[6]
     parar = valor[5]
     errar = valor[4]
@@ -850,7 +1021,7 @@ def rodada8():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[7]
     parar = valor[6]
     errar = valor[5]
@@ -880,7 +1051,7 @@ def rodada9():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[8]
     parar = valor[7]
     errar = valor[6]
@@ -910,7 +1081,7 @@ def rodada10():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[9]
     parar = valor[8]
     errar = valor[7]
@@ -940,7 +1111,7 @@ def rodada11():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[10]
     parar = valor[9]
     errar = valor[8]
@@ -970,7 +1141,7 @@ def rodada12():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[11]
     parar = valor[10]
     errar = valor[9]
@@ -1000,7 +1171,7 @@ def rodada13():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[12]
     parar = valor[11]
     errar = valor[10]
@@ -1030,7 +1201,7 @@ def rodada14():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[13]
     parar = valor[12]
     errar = valor[11]
@@ -1060,13 +1231,16 @@ def rodada15():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p
     acerto = valor[14]
     parar = valor[13]
     errar = valor[12]
     p = 14
     pergunta = nivel3['pergunta'][sorteio[4]]
     resposta = nivel3['resposta'][sorteio[4]]
+    print(p)
+    print(len(nivel3['pergunta']) - 1)
+    print(sorteio)
     cabecalho(f' 15ª PERGUNTA, VALENDO {moeda(valor[14])} REAIS')
     placar()
     som('audio/frase_500mil.mp3')
@@ -1090,13 +1264,14 @@ def rodada16():
             rodada. E por fim recebe o valor da variável P que ira definir o indice das perguntas caso o usuário use o
             recurso da ajuda pular.
         """
-    global premio, acerto, errar, parar
+    global premio, acerto, errar, parar, p, pulo, carta, convidado, colega
     acerto = valor[15]
-    parar = valor[14]
-    errar = 0
+    parar = errar = pulo = carta = convidado = colega = 0
     p = 15
     pergunta = nivel4['pergunta'][sorteio[0]]
     resposta = nivel4['resposta'][sorteio[0]]
+    print(len(nivel4['pergunta']) -1)
+    print(sorteio)
     cabecalho(f' PERGUNTA FINAL, VALENDO {moeda(valor[15])} REAIS')
     placar()
     som('audio/frase_final.mp3')
@@ -1200,6 +1375,7 @@ def final(arq, nome, premio):
     except:
         print('Houve um ERRO na abertura do arquivo!')
     else:
+        som('audio/frase_lombardi.mp3')
         cabecalho('RESULTADO DA PARTIDA')
         print(f'| {am}{"JOGADOR":^37}{br} | {am}{"PREMIAÇÃO":^36}{br} |')
         linha()
@@ -1322,6 +1498,6 @@ def arquivoexiste(arq):
 
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
-inicio()
+#inicio()
 
-
+rodada16()
