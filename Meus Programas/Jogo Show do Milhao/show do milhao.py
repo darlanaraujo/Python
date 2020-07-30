@@ -28,7 +28,7 @@ convidado = 1
 colega = 1
 
 # Definição da posição do jogador na partida;
-global p
+p = 0
 
 # Definição dos valores para cada rodada;
 valor = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
@@ -388,8 +388,38 @@ nivel3 = {'pergunta': [
     f'\n{am}B) {br}MELANÉSIA'
     f'\n{am}C) {br}POLINÉSIA'
     f'\n{am}D) {br}INDONÉSIA',
+    # Pergunta 15
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 16
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 17
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 18
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 19
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg'
 ],
-    'resposta':['A', 'D', 'B', 'B', 'C', 'B', 'D', 'A', 'C', 'B', 'B', 'B', 'B', 'C', 'B']
+    'resposta':['A', 'D', 'B', 'B', 'C', 'B', 'D', 'A', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'X', 'X', 'X', 'X', 'X']
 }
 
 nivel4 = {'pergunta': [
@@ -453,9 +483,68 @@ nivel4 = {'pergunta': [
     f'\n{am}B) {br}EÇA DE QUEIROZ'
     f'\n{am}C) {br}RUI BARBOSA'
     f'\n{am}D) {br}RAIMUNDO CORRÊA',
-    
+    # Pergunta 10
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 11
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 12
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 13
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 14
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 15
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 16
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 17
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 18
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
+    # Pergunta 19
+    f'{fvm}>>>  msg   {sc}'
+    f'\n{am}A) {br}msg'
+    f'\n{am}B) {br}msg'
+    f'\n{am}C) {br}msg'
+    f'\n{am}D) {br}msg',
 ],
-    'resposta':['C', 'C', 'B', 'C', 'B', 'D', 'D', 'B', 'C', 'C']
+    'resposta':['C', 'C', 'B', 'C', 'B', 'D', 'D', 'B', 'C', 'C', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
 }
 
 # Foi criado esse dicionário para serem usadas quando o jogador quiser pular no jogo, assim evito a repetição;
@@ -564,26 +653,11 @@ pulos = {'pergunta': [
 
 # Essa função faz com que o sorteio não se repita; Lembrando que a ordem do sorteio corresponde a ordem das perguntas;
 sorteio = []
-if p < 5:
-    while len(sorteio) != len(nivel1['pergunta']):
-        r = randint(0, len(nivel1['pergunta']) - 1)
-        if r not in sorteio:
-            sorteio.append(r)
-elif p < 10:
-    while len(sorteio) != len(nivel2['pergunta']):
-        r = randint(0, len(nivel2['pergunta']) - 1)
-        if r not in sorteio:
-            sorteio.append(r)
-elif p < 15:
-    while len(sorteio) != len(nivel3['pergunta']):
-        r = randint(0, len(nivel3['pergunta']) - 1)
-        if r not in sorteio:
-            sorteio.append(r)
-elif p == 15:
-    while len(sorteio) != len(nivel4['pergunta']):
-        r = randint(0, len(nivel4['pergunta']) -1)
-        if r not in sorteio:
-            sorteio.append(r)
+
+while len(sorteio) != len(nivel1['pergunta']):
+    r = randint(0, len(nivel1['pergunta']) - 1)
+    if r not in sorteio:
+        sorteio.append(r)
 
 # O mesmo ocorre para as perguntas da função pular;
 pular = []
@@ -1238,9 +1312,6 @@ def rodada15():
     p = 14
     pergunta = nivel3['pergunta'][sorteio[4]]
     resposta = nivel3['resposta'][sorteio[4]]
-    print(p)
-    print(len(nivel3['pergunta']) - 1)
-    print(sorteio)
     cabecalho(f' 15ª PERGUNTA, VALENDO {moeda(valor[14])} REAIS')
     placar()
     som('audio/frase_500mil.mp3')
@@ -1270,8 +1341,6 @@ def rodada16():
     p = 15
     pergunta = nivel4['pergunta'][sorteio[0]]
     resposta = nivel4['resposta'][sorteio[0]]
-    print(len(nivel4['pergunta']) -1)
-    print(sorteio)
     cabecalho(f' PERGUNTA FINAL, VALENDO {moeda(valor[15])} REAIS')
     placar()
     som('audio/frase_final.mp3')
@@ -1498,6 +1567,5 @@ def arquivoexiste(arq):
 
 
 # ===================== INÍCIO DO PROGRAMA ============================================================================
-#inicio()
+inicio()
 
-rodada16()
