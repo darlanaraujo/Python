@@ -1,8 +1,8 @@
+# - * - codificação: utf-8 - * -
+
 # ===================== IMPORTAÇÕES ===================================================================================
 from time import sleep
 from random import randint
-#import random
-#from pygame import mixer, event
 import pygame
 
 # ===================== VARIAVEIS GLOBAIS =============================================================================
@@ -389,37 +389,37 @@ nivel3 = {'pergunta': [
     f'\n{am}C) {br}POLINÉSIA'
     f'\n{am}D) {br}INDONÉSIA',
     # Pergunta 15
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual destas seleções nunca jogou uma final de copa?   {sc}'
+    f'\n{am}A) {br}ESPANHA'
+    f'\n{am}B) {br}SUÉCIA'
+    f'\n{am}C) {br}HUNGRIA'
+    f'\n{am}D) {br}FRANÇA',
     # Pergunta 16
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual é o país que tem uma árvore estampada na bandeira?   {sc}'
+    f'\n{am}A) {br}EGITO'
+    f'\n{am}B) {br}CANADÁ'
+    f'\n{am}C) {br}LÍBANO'
+    f'\n{am}D) {br}MARROCOS',
     # Pergunta 17
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  A que país pertence a Groenlândia?   {sc}'
+    f'\n{am}A) {br}DINAMARCA'
+    f'\n{am}B) {br}INGLATERRA'
+    f'\n{am}C) {br}NORUEGA'
+    f'\n{am}D) {br}ESTADOS UNIDOS',
     # Pergunta 18
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual foi o primeiro presidente do Brasil eleito pelo povo?   {sc}'
+    f'\n{am}A) {br}GETÚLIO VARGAS'
+    f'\n{am}B) {br}PRUDENTE DE MORAES'
+    f'\n{am}C) {br}WASHINGTON LUÍS'
+    f'\n{am}D) {br}TANCREDO NEVES',
     # Pergunta 19
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg'
+    f'{fvm}>>>  Miró, Picasso e Salvador Dalí eram pintores:   {sc}'
+    f'\n{am}A) {br}ITALIANOS'
+    f'\n{am}B) {br}PORTUGUESES'
+    f'\n{am}C) {br}ESPANHÓIS'
+    f'\n{am}D) {br}CHILENOS'
 ],
-    'resposta':['A', 'D', 'B', 'B', 'C', 'B', 'D', 'A', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'X', 'X', 'X', 'X', 'X']
+    'resposta':['A', 'D', 'B', 'B', 'C', 'B', 'D', 'A', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'A', 'C', 'A', 'B', 'C']
 }
 
 nivel4 = {'pergunta': [
@@ -484,67 +484,67 @@ nivel4 = {'pergunta': [
     f'\n{am}C) {br}RUI BARBOSA'
     f'\n{am}D) {br}RAIMUNDO CORRÊA',
     # Pergunta 10
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que procurava Juan Ponce de Leon quando descobriu a Flórida?   {sc}'
+    f'\n{am}A) {br}A CIDADE PERDIDA DE OURO'
+    f'\n{am}B) {br}A FONTE DA JUVENTUDE'
+    f'\n{am}C) {br}UNICÓRNIOS'
+    f'\n{am}D) {br}SEU GATO',
     # Pergunta 11
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  As Ilhas Malvinas também são chamadas de:   {sc}'
+    f'\n{am}A) {br}STANLEY'
+    f'\n{am}B) {br}WEDELLS'
+    f'\n{am}C) {br}3 MEDANOSA'
+    f'\n{am}D) {br}FALKLAND',
     # Pergunta 12
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Qual destes países não se situa no Equador?   {sc}'
+    f'\n{am}A) {br}QUÊNIA'
+    f'\n{am}B) {br}EQUADOR'
+    f'\n{am}C) {br}CHILE'
+    f'\n{am}D) {br}INDONÉSIA',
     # Pergunta 13
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Em que país Leonardo da Vinci viveu seus últimos dias?   {sc}'
+    f'\n{am}A) {br}ESPANHA'
+    f'\n{am}B) {br}HOLANDA'
+    f'\n{am}C) {br}FRANÇA'
+    f'\n{am}D) {br}ITÁLIA',
     # Pergunta 14
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Pablo Picasso foi um dos criadores do:   {sc}'
+    f'\n{am}A) {br}CUBISMO'
+    f'\n{am}B) {br}SURREALISMO'
+    f'\n{am}C) {br}IMPRESSIONISMO'
+    f'\n{am}D) {br}REALISMO',
     # Pergunta 15
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Como se chama o explorador de grutas e cavernas?   {sc}'
+    f'\n{am}A) {br}ESPELEÓLOGO'
+    f'\n{am}B) {br}AGROSTÓLOGO'
+    f'\n{am}C) {br}PSICÓLOGO'
+    f'\n{am}D) {br}CAMPANÓLOGO',
     # Pergunta 16
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  A baleia está classificada em qual grupo de mamíferos?   {sc}'
+    f'\n{am}A) {br}CETÁCEOS'
+    f'\n{am}B) {br}FELINOS'
+    f'\n{am}C) {br}SIRÊNIOS'
+    f'\n{am}D) {br}CARNÍVOROS',
     # Pergunta 17
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O filme “A noviça rebelde”, premiado com 5 Oscars, foi estrelado por:   {sc}'
+    f'\n{am}A) {br}JUDY GARLAND'
+    f'\n{am}B) {br}SHIRLEY TEMPLE'
+    f'\n{am}C) {br}JULIE ANDREWS'
+    f'\n{am}D) {br}DORIS DAY',
     # Pergunta 18
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  O que o pintor Claude Monet representou em suas telas?   {sc}'
+    f'\n{am}A) {br}OS JARDINS DE GIVERNY'
+    f'\n{am}B) {br}OS BISTRÔS DE PARIS'
+    f'\n{am}C) {br}CENAS DO MOULIN ROUGE'
+    f'\n{am}D) {br}PAISAGENS DA PROVENÇA',
     # Pergunta 19
-    f'{fvm}>>>  msg   {sc}'
-    f'\n{am}A) {br}msg'
-    f'\n{am}B) {br}msg'
-    f'\n{am}C) {br}msg'
-    f'\n{am}D) {br}msg',
+    f'{fvm}>>>  Como é chamada a gravura impressa sobre pranchas de madeira?   {sc}'
+    f'\n{am}A) {br}MATEROGRAFIA'
+    f'\n{am}B) {br}LITOGRAFIA'
+    f'\n{am}C) {br}XILOGRAFIA'
+    f'\n{am}D) {br}SERIGRAFIA',
 ],
-    'resposta':['C', 'C', 'B', 'C', 'B', 'D', 'D', 'B', 'C', 'C', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
+    'resposta':['C', 'C', 'B', 'C', 'B', 'D', 'D', 'B', 'C', 'C', 'B', 'D', 'C', 'C', 'A', 'A', 'A', 'C', 'A', 'C']
 }
 
 # Foi criado esse dicionário para serem usadas quando o jogador quiser pular no jogo, assim evito a repetição;
