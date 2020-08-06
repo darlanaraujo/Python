@@ -31,7 +31,9 @@ colega = 1
 p = 0
 
 # Definição dos valores para cada rodada;
-valor = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
+valor = ['R$ 1.000,00', 'R$ 2.000,00', 'R$ 3.000,00', 'R$ 4.000,00', 'R$ 5.000,00',
+         'R$ 10.000,00', 'R$ 20.000,00', 'R$ 30.000,00', 'R$ 40.000,00', 'R$ 50.000,00',
+         'R$ 100.000,00', 'R$ 200.000,00', 'R$ 300.000,00', 'R$ 400.000,00', 'R$ 500.000,00', 'R$ 1.000.000,00']
 
 # Definição para a variável de premio que será exibida ao termino da jogada e mostrá-ra o valor ganho pelo jogador.
 premio = 0
@@ -893,7 +895,7 @@ def rodada1():
     p = 0
     pergunta = nivel1['pergunta'][sorteio[0]]
     resposta = nivel1['resposta'][sorteio[0]]
-    cabecalho(f' 1ª PERGUNTA, VALENDO {moeda(valor[0])} REAIS')
+    cabecalho(f' 1ª PERGUNTA, VALENDO {valor[0]} REAIS')
     placar()
     som('audio/frase_1mil.mp3')
     perguntas(pergunta, resposta, rodada2, p)
@@ -922,7 +924,7 @@ def rodada2():
     p = 1
     pergunta = nivel1['pergunta'][sorteio[1]]
     resposta = nivel1['resposta'][sorteio[1]]
-    cabecalho(f' 2ª PERGUNTA, VALENDO {moeda(valor[1])} REAIS')
+    cabecalho(f' 2ª PERGUNTA, VALENDO {valor[1]} REAIS')
     placar()
     som('audio/frase_2mil.mp3')
     perguntas(pergunta, resposta, rodada3, p)
@@ -952,7 +954,7 @@ def rodada3():
     p = 2
     pergunta = nivel1['pergunta'][sorteio[2]]
     resposta = nivel1['resposta'][sorteio[2]]
-    cabecalho(f' 3ª PERGUNTA, VALENDO {moeda(valor[2])} REAIS')
+    cabecalho(f' 3ª PERGUNTA, VALENDO {valor[2]} REAIS')
     placar()
     som('audio/frase_3mil.mp3')
     perguntas(pergunta, resposta, rodada4, p)
@@ -982,7 +984,7 @@ def rodada4():
     p = 3
     pergunta = nivel1['pergunta'][sorteio[3]]
     resposta = nivel1['resposta'][sorteio[3]]
-    cabecalho(f' 4ª PERGUNTA, VALENDO {moeda(valor[3])} REAIS')
+    cabecalho(f' 4ª PERGUNTA, VALENDO {valor[3]} REAIS')
     placar()
     som('audio/frase_4mil.mp3')
     perguntas(pergunta, resposta, rodada5, p)
@@ -1012,7 +1014,7 @@ def rodada5():
     p = 4
     pergunta = nivel1['pergunta'][sorteio[4]]
     resposta = nivel1['resposta'][sorteio[4]]
-    cabecalho(f' 5ª PERGUNTA, VALENDO {moeda(valor[4])} REAIS')
+    cabecalho(f' 5ª PERGUNTA, VALENDO {valor[4]} REAIS')
     placar()
     som('audio/frase_5mil.mp3')
     perguntas(pergunta, resposta, rodada6, p)
@@ -1042,7 +1044,7 @@ def rodada6():
     p = 5
     pergunta = nivel2['pergunta'][sorteio[0]]
     resposta = nivel2['resposta'][sorteio[0]]
-    cabecalho(f' 6ª PERGUNTA, VALENDO {moeda(valor[5])} REAIS')
+    cabecalho(f' 6ª PERGUNTA, VALENDO {valor[5]} REAIS')
     placar()
     som('audio/frase_10mil.mp3')
     perguntas(pergunta, resposta, rodada7, p)
@@ -1072,7 +1074,7 @@ def rodada7():
     p = 6
     pergunta = nivel2['pergunta'][sorteio[1]]
     resposta = nivel2['resposta'][sorteio[1]]
-    cabecalho(f' 7ª PERGUNTA, VALENDO {moeda(valor[6])} REAIS')
+    cabecalho(f' 7ª PERGUNTA, VALENDO {valor[6]} REAIS')
     placar()
     som('audio/frase_20mil.mp3')
     perguntas(pergunta, resposta, rodada8, p)
@@ -1102,7 +1104,7 @@ def rodada8():
     p = 7
     pergunta = nivel2['pergunta'][sorteio[2]]
     resposta = nivel2['resposta'][sorteio[2]]
-    cabecalho(f' 8ª PERGUNTA, VALENDO {moeda(valor[7])} REAIS')
+    cabecalho(f' 8ª PERGUNTA, VALENDO {valor[7]} REAIS')
     placar()
     som('audio/frase_30mil.mp3')
     perguntas(pergunta, resposta, rodada9, p)
@@ -1132,7 +1134,7 @@ def rodada9():
     p = 8
     pergunta = nivel2['pergunta'][sorteio[3]]
     resposta = nivel2['resposta'][sorteio[3]]
-    cabecalho(f' 9ª PERGUNTA, VALENDO {moeda(valor[8])} REAIS')
+    cabecalho(f' 9ª PERGUNTA, VALENDO {valor[8]} REAIS')
     placar()
     som('audio/frase_40mil.mp3')
     perguntas(pergunta, resposta, rodada10, p)
@@ -1162,7 +1164,7 @@ def rodada10():
     p = 9
     pergunta = nivel2['pergunta'][sorteio[4]]
     resposta = nivel2['resposta'][sorteio[4]]
-    cabecalho(f' 10ª PERGUNTA, VALENDO {moeda(valor[9])} REAIS')
+    cabecalho(f' 10ª PERGUNTA, VALENDO {valor[9]} REAIS')
     placar()
     som('audio/frase_50mil.mp3')
     perguntas(pergunta, resposta, rodada11, p)
@@ -1192,7 +1194,7 @@ def rodada11():
     p = 10
     pergunta = nivel3['pergunta'][sorteio[0]]
     resposta = nivel3['resposta'][sorteio[0]]
-    cabecalho(f' 11ª PERGUNTA, VALENDO {moeda(valor[10])} REAIS')
+    cabecalho(f' 11ª PERGUNTA, VALENDO {valor[10]} REAIS')
     placar()
     som('audio/frase_100mil.mp3')
     perguntas(pergunta, resposta, rodada12, p)
@@ -1222,7 +1224,7 @@ def rodada12():
     p = 11
     pergunta = nivel3['pergunta'][sorteio[1]]
     resposta = nivel3['resposta'][sorteio[1]]
-    cabecalho(f' 12ª PERGUNTA, VALENDO {moeda(valor[11])} REAIS')
+    cabecalho(f' 12ª PERGUNTA, VALENDO {valor[11]} REAIS')
     placar()
     som('audio/frase_200mil.mp3')
     perguntas(pergunta, resposta, rodada13, p)
@@ -1252,7 +1254,7 @@ def rodada13():
     p = 12
     pergunta = nivel3['pergunta'][sorteio[2]]
     resposta = nivel3['resposta'][sorteio[2]]
-    cabecalho(f' 13ª PERGUNTA, VALENDO {moeda(valor[12])} REAIS')
+    cabecalho(f' 13ª PERGUNTA, VALENDO {valor[12]} REAIS')
     placar()
     som('audio/frase_300mil.mp3')
     perguntas(pergunta, resposta, rodada14, p)
@@ -1282,7 +1284,7 @@ def rodada14():
     p = 13
     pergunta = nivel3['pergunta'][sorteio[3]]
     resposta = nivel3['resposta'][sorteio[3]]
-    cabecalho(f' 14ª PERGUNTA, VALENDO {moeda(valor[13])} REAIS')
+    cabecalho(f' 14ª PERGUNTA, VALENDO {valor[13]} REAIS')
     placar()
     som('audio/frase_400mil.mp3')
     perguntas(pergunta, resposta, rodada15, p)
@@ -1312,7 +1314,7 @@ def rodada15():
     p = 14
     pergunta = nivel3['pergunta'][sorteio[4]]
     resposta = nivel3['resposta'][sorteio[4]]
-    cabecalho(f' 15ª PERGUNTA, VALENDO {moeda(valor[14])} REAIS')
+    cabecalho(f' 15ª PERGUNTA, VALENDO {valor[14]} REAIS')
     placar()
     som('audio/frase_500mil.mp3')
     perguntas(pergunta, resposta, rodada16, p)
@@ -1341,7 +1343,7 @@ def rodada16():
     p = 15
     pergunta = nivel4['pergunta'][sorteio[0]]
     resposta = nivel4['resposta'][sorteio[0]]
-    cabecalho(f' PERGUNTA FINAL, VALENDO {moeda(valor[15])} REAIS')
+    cabecalho(f' PERGUNTA FINAL, VALENDO {valor[15]} REAIS')
     placar()
     som('audio/frase_final.mp3')
     perguntas(pergunta, resposta, final, p)
@@ -1448,10 +1450,10 @@ def final(arq, nome, premio):
         cabecalho('RESULTADO DA PARTIDA')
         print(f'| {am}{"JOGADOR":^37}{br} | {am}{"PREMIAÇÃO":^36}{br} |')
         linha()
-        print(f'| {nome:^37} | {moeda(premio):^36} |')
+        print(f'| {nome:^37} | {premio:^36} |')
         linha()
         try:
-            a.write(f'{nome};{moeda(premio)}\n')
+            a.write(f'{nome};{premio}\n')
         except:
             print(f'ERRO ao cadastrar o jogador {nome}')
         else:
@@ -1486,27 +1488,29 @@ def ranking(arq):
 def layout():
     print(br)
     linha('=')
-    print(f'|{am+"JOGO SHOW DO MILHÃO - V1.0".center(78)+br}|')
+    print(f'|{am+"JOGO SHOW DO MILHÃO - V1.0".center(98)+br}|')
     linha('=')
-    print(f'|      {am}{"BEM VINDO AO"} {br}{"JOGO SHOW DO MILHÃO"} {am}{" - DESENVOLVIDO POR "} {br}{"DARLAN ARAUJO"}     |')
+    print(f'|               {am}{"BEM VINDO AO"} {br}{"JOGO SHOW DO MILHÃO"} {am}{" - DESENVOLVIDO POR "}  '
+          f'{br}{"DARLAN ARAUJO"}               |')
     linha('=')
-    print(f'|     {az}{"Acerte as perguntas e concorra ao premio de"} {vm}{"R$ 1.000,000,00"} {az}{"de reais"}{br}     |')
+    print(f'|              {az}{"Acerte as perguntas e concorra ao premio de"} {vm}{"R$ 1.000,000,00"} '
+          f'{az}{"de reais"}{br}                |')
     linha('=')
     
 
 def placar():
-    print(f'| {am}{" AJUDAS DO JOGO >>> "}{br} | {"PULAR: "} {am}{pulo}{br} | {"CARTAS: "} {am}{carta}{br} |'
-          f' {"CONVIDADOS: "} {am}{convidado}{br} | {"COLEGAS: "} {am}{colega}{br} |')
+    print(f'|  {am}{"  AJUDAS DO JOGO >>>  "}{br} |  {"PULAR: "}  {am}{pulo}{br}   |  {"CARTAS: "}  {am}{carta}{br}   |'
+          f'  {"CONVIDADOS: "}  {am}{convidado}{br}   |  {"COLEGAS: "}  {am}{colega}{br}    |')
     linha('=')
-    print(f'| {am}{"PLACAR >>>"}{br} | {"ERRAR:"} {vm}{errar:<11.2f}{br} |'
-          f' {"PARAR:"} {rx}{parar:<12.2f}{br} | {"ACERTO:"} {am}{acerto:<12.2f}{br} |')
+    print(f'| {am}{"PLACAR >>>"}{br} | {"ERRAR:"} {vm}{errar:<17}{br} |'
+          f' {"PARAR:"} {rx}{parar:<19}{br} | {"ACERTO:"} {am}{acerto:<19}{br} |')
     linha('=')
 
 
 def cabecalho(msg):
     print(br)
     linha('=')
-    print(f'|{am}{msg.center(78)}{br}|')
+    print(f'|{am}{msg.center(98)}{br}|')
     linha('=')
 
 
@@ -1517,7 +1521,7 @@ def som(audio):
     while (pygame.mixer.music.get_busy()): pass
 
 
-def linha(caractere='-', tam=80):
+def linha(caractere='-', tam=100):
     print(caractere * tam)
 
 
