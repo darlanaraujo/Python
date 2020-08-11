@@ -1,4 +1,4 @@
-# - * - codificação: utf-8 - * -
+
 
 # ===================== IMPORTAÇÕES ===================================================================================
 from time import sleep
@@ -36,10 +36,10 @@ valor = ['R$ 1.000,00', 'R$ 2.000,00', 'R$ 3.000,00', 'R$ 4.000,00', 'R$ 5.000,0
          'R$ 100.000,00', 'R$ 200.000,00', 'R$ 300.000,00', 'R$ 400.000,00', 'R$ 500.000,00', 'R$ 1.000.000,00']
 
 # Definição para a variável de premio que será exibida ao termino da jogada e mostrá-ra o valor ganho pelo jogador.
-premio = 0
-acerto = 0
-errar = 0
-parar = 0
+premio = 'R$ 0,00'
+acerto = 'R$ 0,00'
+errar = 'R$ 0,00'
+parar = 'R$ 0,00'
 # ===================== PERGUNTAS DO JOGO =============================================================================
 # Formulário base para as perguntas;
 # Pergunta 0
