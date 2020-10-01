@@ -8,5 +8,6 @@
     <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Projeto-Jogo-Show-do-Milhao" />
+    <orderEntry type="module" module-name="projeto-show-do-milhao" />
   </component>
 </module>
